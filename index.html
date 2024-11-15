@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Claudius Mainja - Product Designer & Web Developer with 10+ years of experience in brand design, strategy, and positioning. Based in Cape Town.">
+    <meta name="keywords" content="product design, web development, UI/UX design, brand strategy, Cape Town designer">
+    <meta name="author" content="Claudius Mainja">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Claudius Mainja - Product Designer & Web Developer">
+    <meta property="og:description" content="Portfolio of Claudius Mainja - Crafting digital experiences that combine aesthetic excellence with functional design">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/branding-01.png">
+    
+    <title>Claudius Mainja | Product Designer & Web Developer | Cape Town</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Claudius Mainja",
+      "jobTitle": "Product Designer & Web Developer",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cape Town",
+        "addressCountry": "South Africa"
+      },
+      "url": "https://www.claudius-mainja.com",
+      "sameAs": [
+        "https://linkedin.com/in/claudiusmainja",
+        "https://github.com/claudiusmainja",
+      ]
+    }
+    </script>
+
+    <!-- Custom Styles -->
+
+</head>
+
+
+    <!-- Header -->
+    <header id="header" class="fixed w-full z-40 transition-all duration-300 work-sans-medium ">
+        <nav class="bg-white bg-opacity-95 shadow-lg backdrop-blur-sm pt-8 pb-8 top-0">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <a href="#home" class="flex items-center space-x-2">
+                        <img src="Assets/images/Branding-01.png" alt="logo" height="200px" width="200px" >
+                    </a>
+                    
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex space-x-8">
+                        <a href="#home" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">Home</a>
+                        <a href="pages/about.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">About</a>
+                        <a href="pages/Portfolio.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">Portfolio</a>
+                        <a href="pages/Contact.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">Contact</a>
+                        <a href="assets/doc/Claudius Mainja Resume.docx" target="_blank" class="px-6 py-2 text-white bg-gradient-to-r from-orange-400 to-orange-600 rounded-full hover:shadow-lg transition duration-300 transform hover:-translate-y-0.5">
+                            Resume
+                        </a>
+                    </div>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="menuBtn" class="md:hidden text-gray-900 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="hidden md:hidden bg-white">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#home" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Home</a>
+                    <a href="pages/Portfolio.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Portfolio</a>
+                    <a href="pages/about.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">About</a>
+                    <a href="pages/Contact.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <body class=" work-sans-medium bg-white text-neutral-800 dark:bg-gray-950 dark:text-white text-lg">
+        <!-- Loading Screen -->
+        <div id="loader" class="fixed inset-0 z-50 flex items-center justify-center bg-white">
+            <div class="loader w-12 h-12 border-4 border-gray-200 rounded-full"></div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="relative min-h-screen flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="Assets/images/Home hero.png" alt="Hero background" class="w-full h-full object-cover filter brightness-50 sm:object-cover"/>
+                <div class="absolute inset-0 bg-gray-950/80"></div>
+            </div>
+            
+            <div class="relative max-w-7xl mx-auto px-4 py-24 sm:px-8 lg:px-8 flex flex-col md:flex-row items-center justify-between quattrocento-bold sm:h-screen">
+                <div class="text-white md:w-2/3 text-center md:text-left" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-6xl  mb-6 ">
+                        Hi, I'm Claudius Mainja. <span class="text-orange-400"> I'm a Product Designer & Web Developer</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-gray-300 quattrocento-regular">
+                        As an experienced product and brand designer/web developer with over 10 years, I specialize in creating visually stunning and user-friendly digital experiences that drive business growth.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start ">
+                        <a href="pages/Portfolio.html" target="_blank">
+                        <button class="px-8 py-4 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full text-lg font-semibold hover:shadow-xl transition duration-300 transform hover:-translate-y-0.5">
+                            Recent Projects
+                        </button>
+                    </a>
+                    <a href="assets/doc/Claudius Mainja Resume.docx" target="_blank">
+                        <button class="px-8 py-4 border-2 border-white rounded-full text-lg font-semibold hover:bg-white hover:text-orange-400 transition duration-300">
+                            Resume Download
+                        </button>
+                    </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-12 md:mt-0 float-animation" data-aos="fade-left">
+                    <img src="Assets/images/claude.jpg" alt="Hero illustration" class="w-full max-w-md mx-auto rounded-xl"/>
+                </div>
+            </div>
+        </div>
+
+<!--Work Experience-->
+        <section class="py-16 bg-slate-200">
+            <div class="container mx-auto px-4">
+              <h2 class="text-3xl quattrocento-bold  mb-8 text-center text-gray-900">Work Experience</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!--Blacklemur Innovations -Global -->
+                <div class="dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg p-6 fade-in">
+                  <h3 class="text-2xl">Product Designer and Web Developer</h3>
+                  <p class="mb-2 text-orange-400">Blacklemur Innovations -Hybrid | 2019 - Present</p>
+                  <p>As a product designer and web developer at Blacklemur Innovations, I've led the design and development of award-winning digital products for a diverse range of clients. My responsibilities include:</p>
+                  <ul class="list-disc pl-6 mt-4">
+                    <li>Spearheaded numerous projects involving website and mobile application design and development to drive innovation and meet client objectives.</li>
+                    <li>Delivered tailored design and development solutions by collaborating closely with clients, actively listening to their unique needs, and aligning solutions with their goals</li>
+                    <li>Ensured a seamless user experience and achieved successful implementation of designs through effective collaboration with the development team, resulting in high user satisfaction and positive feedback.</li>
+                    <li>Acted as a mentor and coach to junior designers, providing guidance, feedback, and support to foster their professional growth and development, contributing to a collaborative and high-performing team culture recognized for delivering exceptional design outcomes.</li>
+                  </ul>
+                </div>
+
+                <!--Higherlife Foundation-->
+                <div class="dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg p-6 fade-in">
+                    <h3 class="text-2xl ">Digital Designer/Consultant </h3>
+                    <p class="mb-2 text-orange-400"> <a href="www.global-intercessors.com" target="_blank">Higherlife Foundation -Hybrid | 2022 - Present</a></p>
+                    <p>As a Digital Designer at Higherlife Foundation, I've led the design and communication team of the faith department on visual communication. My responsibilities include:</p>
+                    <ul class="list-disc pl-6 mt-4">
+                      <li>Provided exceptional design consulting services to various faith brands within the organization, creating captivating logos, web designs, and marketing materials, resulting in improved brand perception and engagement.</li>
+                      <li>Crafted visually engaging digital marketing campaigns by collaborating with the marketing team, driving brand awareness and expanding the organization’s reach</li>
+                      <li>Enhanced user experience through strategic and user-friendly website designs and the incorporation of interactive elements, leading to increased user engagement and longer site visits.</li>
+                      <li>Prototyping and testing design concepts</li>
+                      <li>Collaborating with cross-functional teams to deliver exceptional user experiences</li>
+                    </ul>
+                  </div>
+
+                  <!--Helens Project-->
+                  <div class="dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg p-6 fade-in">
+                    <h3 class="text-2xl">Lead Graphic Designer</h3>
+                    <p class="mb-2 text-orange-400"><a href="www.hlproject.org" target="_blank" >Helens Project -Remote | October 2018 - July 2022</a></p>
+                    <p>As a lead designer at Helens Project I've led the design and development of award-winning organization for a diverse range of clients. My responsibilities included:</p>
+                    <ul class="list-disc pl-6 mt-4">
+                      <li>Led the design team at Helen’s Project, delivering creative and effective branding and marketing solutions that elevated the brand’s visibility and market position</li>
+                      <li>Designing intuitive user interfaces and interactions</li>
+                      <li>Developed visually appealing websites, brochures, and marketing materials, ensuring they were aligned with the brand’s visual identity to reinforce brand recognition and consistency.</li>
+                      <li>CMentored and guided a team of junior designers, fostering their professional growth, and elevating the overall quality of design work produced by the team.</li>
+                    </ul>
+                  </div>
+
+                <div class="dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg p-6 fade-in" style="animation-delay: 0.2s;">
+                  <h3 class="text-xl ">Senior Product Designer & Web Developer</h3>
+                  <p class="mb-2 text-orange-400">Onx Labs | South Africa - Remote | January 2024 – Present</p>
+                  <p>At Onx Labs, I honed my skills in research, brand identity design and strategy. My key accomplishments include:</p>
+                  <ul class="list-disc pl-6 mt-4">
+                    <li>Developed brand identities for several high-profile startups and established companies</li>
+                    <li>Created comprehensive brand guidelines and assets for clients</li>
+                    <li>Designed and prototyped user-centric solutions for multiple client projects, addressing key user needs and improving user experiencess</li>
+                    <li>Led user research process for a new product launch, effectively identifying user needs and translating them into a successful product experience</li>
+                    <li>•	Effectively communicated design concepts and provided technical documentation to stakeholders, facilitating successful product development.</li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl quattrocento-bold mb-12 text-center fade-in">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Nature Extand Website -->
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow fade-in">
+                    <img src="assets/images/Nature Extant.png" alt="Nature Extand" class="w-full h-48 object-cover hover:animate-pulse">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2"><a href="https://natureextant.com/" target="_blank"> Nature Extant Learning Center</a></h3>
+                        <p class="text-gray-600 mb-4 work-sans-medium">Completed the brand design project of an organization called  Nature Extant Learning Center, with the services of web development from UX Design, Sketches, prototype and the final design.</p>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-full">Brand strategy + positioning</span>
+                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-full">Strategy</span>
+                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-full">UI/UX</span>
+                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-full">Development</span>
+                        </div>
+                    </div>
+                </article>
+                
+                
+                 <!-- Global Intercessors -->
+                 <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow fade-in">
+                    <img src="assets/images/global intercessors.png" alt="Global Intercessors" class="w-full h-48 object-cover hover:animate-pulse">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2"><a href="https://global-intercessors.com/" target="_blank">Global Intercessors </a></h3>
+                        <p class="text-gray-600 mb-4 work-sans-medium">worked with Higherlife Foundation focusing on the brand design and management, digital marketing services + web development of the Global Intercessors the faith brand within the organization.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-full">Branding</span>
+                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-full">Strategy</span>
+                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-full">UI/UX</span>
+                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-full">Development</span>
+                        </div>
+                    </div>
+                </article>      
+                
+
+                  <!-- Classic Reinsurance-->
+                  <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow fade-in">
+                    <img src="assets/images/classicre.png" alt="Classic Reinsurance" class="w-full h-48 object-cover lazy-load hover:animate-pulse">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2"><a href="https://classicre.co.zw/" target="_blank"> Classic Resinsurance Brokers</a></h3>
+                        <p class="text-gray-600 mb-4 work-sans-medium"> worked with Classic Reinsurance Brokers a reinsurance broker focusing on the digital marketing services + web development of the organization.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-full">Strategy</span>
+                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-full">UI/UX</span>
+                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-full">Development</span>
+                        </div>
+                    </div>
+                </article>                    
+                
+                
+                <!-- more project cards here -->
+            </div>
+        </div>
+    </section>
+
+   <!--My Design Process-->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl  mb-8 text-center  quattrocento-bold ">My Design Process</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 fade-in">
+              <h3 class="text-xl mb-4"> Stage 01:  Discovery</h3>
+              <p>I start by thoroughly understanding your business, target audience, and project goals to ensure I deliver a tailored solution.</p>
+            </div>
+            <div class="dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 fade-in" style="animation-delay: 0.2s;">
+              <h3 class="text-xl  mb-4 ">Stage 02: Ideation</h3>
+              <p>Using my design expertise and creativity, I generate numerous concepts and ideas to explore the best approach for your project.</p>
+            </div>
+            <div class="dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 fade-in" style="animation-delay: 0.4s;">
+              <h3 class="text-xl  mb-4 ">Stage 03: Execution</h3>
+              <p>I meticulously craft the final design, ensuring attention to detail and a seamless user experience. I also provide ongoing support and iteration.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl quattrocento-bold  text-gray-900 mb-12 text-center fade-in">Get in Touch</h2>
+            <form id="contactForm" class="space-y-6 fade-in">
+                <div>
+                    <label for="name" class="block text-gray-700 mb-2">Name</label>
+                    <input type="text" id="name" name="name" required 
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                <div>
+                    <label for="email" class="block text-gray-700 mb-2">Email</label>
+                    <input type="email" id="email" name="email" required 
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                <div>
+                    <label for="message" class="block text-gray-700 mb-2">Message</label>
+                    <textarea id="message" name="message" rows="4" required 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                </div>
+                <button type="submit" 
+                        class="w-full bg-gradient-to-r from-orange-400 to-orange-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-2xl quattrocento-bold  mb-2">Let's Connect</h3>
+                    <p class="text-gray-400 work-sans-bold">Available for projects</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/ClaudiusMainja" target="_blank" class="hover:text-orange-400 transition-colors" aria-label="GitHub Profile">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/claudius-mainja/" target="_blank" class="hover:text-orange-400 transition-colors" aria-label="LinkedIn Profile">
+                        <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z" clip-rule="evenodd"/>
+                            <path d="M7.2 8.809H4V19.5h3.2V8.809Z"/>
+                          </svg>
+                          
+                    </a>
+                    <a href="https://dribbble.com/ClaudiusMainja" target="_blank" class="hover:text-orange-400 transition-colors" aria-label="Dribble Profile">
+                        <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M12 2a10 10 0 1 0 10 10A10.009 10.009 0 0 0 12 2Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.093 20.093 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM10 3.707a8.82 8.82 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.755 45.755 0 0 0 10 3.707Zm-6.358 6.555a8.57 8.57 0 0 1 4.73-5.981 53.99 53.99 0 0 1 3.168 4.941 32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.641 31.641 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM12 20.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 15.113 13a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z" clip-rule="evenodd"/>
+                          </svg>
+                          
+                    </a>
+
+                    <a href="https://www.instagram.com/claudiusmainja/" target="_blank" class="hover:text-blue-400 transition-colors" aria-label="Instagram Profile">
+                        <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
+                          </svg>
+                          
+                    </a>
+
+                    <a href="https://www.behance.net/claudiusmainja" target="_blank" class="hover:text-blue-400 transition-colors" aria-label="Behance Profile">
+                        <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M13.2131 9.78732c-.6359-.63557-1.4983-.99259-2.3974-.99259-.89911 0-1.76143.35702-2.39741.99259l-3.4253 3.42528C4.35719 13.8485 4 14.7108 4 15.61c0 .8992.35719 1.7616.99299 2.3974.63598.6356 1.4983.9926 2.39742.9926.89912 0 1.76144-.357 2.39742-.9926l.32157-.3043m-.32157-4.4905c.63587.6358 1.49827.993 2.39747.993.8991 0 1.7615-.3572 2.3974-.993l3.4243-3.42528c.6358-.63585.993-1.49822.993-2.39741 0-.89919-.3572-1.76156-.993-2.39741C17.3712 4.357 16.509 4 15.6101 4c-.899 0-1.7612.357-2.397.9925l-1.0278.96062m7.3873 14.04678-1.7862-1.7862m0 0L16 16.4274m1.7864 1.7863 1.7862-1.7863m-1.7862 1.7863L16 20"/>
+                          </svg>
+                          
+                    </a>
+
+                </div>
+            </div>
+            <div class="text-center text-gray-400 quattrocento-regular">
+                <p>&copy; 2024 Claudius Mainja. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Loading Screen
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            loader.style.transition = 'opacity 0.5s ease-out';
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500);
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+            menuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Scroll Animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                
+                if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+
+        // Initial check for elements in view
+        fadeInOnScroll();
+        
+        // Listen for scroll events
+        window.addEventListener('scroll', fadeInOnScroll);
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                header.classList.remove('shadow-lg');
+                header.style.transform = 'translateY(0)';
+            } else if (currentScroll > lastScroll) {
+                // Scrolling down
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                // Scrolling up
+                header.classList.add('shadow-lg');
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            const formObject = Object.fromEntries(formData);
+            
+            try {
+                // Replace with your actual form submission endpoint
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formObject),
+                });
+                
+                if (response.ok) {
+                    alert('Message sent successfully!');
+                    contactForm.reset();
+                } else {
+                    throw new Error('Failed to send message');
+                }
+            } catch (error) {
+                alert('There was an error sending your message. Please try again later.');
+                console.error('Error:', error);
+            }
+        });
+
+        // Active Navigation Link Highlighting
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-blue-600');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('text-blue-600');
+                }
+            });
+        });
+    </script>
+
+    <!-- Deferred Loading for Performance -->
+    <script defer>
+        // Lazy load images
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img[data-src]');
+            
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+        });
+    </script>
+</body>
+</html>
