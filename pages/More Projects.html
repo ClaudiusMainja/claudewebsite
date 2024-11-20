@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Claudius Mainja - Product Designer & Web Developer with 10+ years of experience in brand design, strategy, and positioning. Based in Cape Town.">
+    <meta name="keywords" content="product design, web development, UI/UX design, brand strategy, Cape Town designer">
+    <meta name="author" content="Claudius Mainja">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Claudius Mainja - Product Designer & Web Developer">
+    <meta property="og:description" content="Portfolio of Claudius Mainja - Crafting digital experiences that combine aesthetic excellence with functional design">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/branding-01.png">
+    
+    <title>Claudius Mainja | Product Designer & Web Developer | Cape Town</title>
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Claudius Mainja",
+      "jobTitle": "Product Designer & Web Developer",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cape Town",
+        "addressCountry": "South Africa"
+      },
+      "url": "https://www.claudius-mainja.com",
+      "sameAs": [
+        "https://linkedin.com/in/claudiusmainja",
+        "https://github.com/claudiusmainja",
+      ]
+    }
+
+    </script>
+
+
+</head>
+
+
+    <!-- Header -->
+    <header id="header" class="fixed w-full z-40 transition-all duration-300 work-sans-medium ">
+        <nav class="bg-white bg-opacity-95 shadow-lg backdrop-blur-sm pt-8 pb-8 top-0">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <a href="/index.html" class="flex items-center space-x-2">
+                        <img src="/assets/images/Branding-01.png" alt="logo" height="200px" width="200px" >
+                    </a>
+                    
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex space-x-8">
+                        <a href="/index.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">Home</a>
+                        <a href="/pages/about.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">About</a>
+                        <a href="/pages/Portfolio.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">Portfolio</a>
+                        <a href="/pages/Contact.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">Contact</a>
+                        <a href="/assets/doc/Claudius Mainja Resume.docx" target="_blank" class="px-6 py-2 text-white bg-gradient-to-r from-orange-400 to-orange-600 rounded-full hover:shadow-lg transition duration-300 transform hover:-translate-y-0.5">
+                            Resume
+                        </a>
+                    </div>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="menuBtn" class="md:hidden text-gray-900 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="hidden md:hidden bg-white">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="/index.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Home</a>
+                    <a href="/pages/Portfolio.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Portfolio</a>
+                    <a href="/pages/about.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">About</a>
+                    <a href="/pages/Contact.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <body class="bg-slate-200 text-gray-800 dark:bg-gradient-to-tr from-gray-800 to-gray-950 dark:text:white work-sans-medium text-lg">
+    
+        <style>
+            /* Custom Animations */
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            @keyframes slideUp {
+                from { transform: translateY(20px); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
+            }
+            .fade-in { animation: fadeIn 0.8s ease forwards; }
+            .slide-up { animation: slideUp 0.8s ease-out forwards; }
+            .scale-hover:hover { transform: scale(1.05); }
+        </style>
+    
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center h-1/2" style="background-image: url('/assets/images/Home\ hero.png');">
+        <div class="absolute inset-0 bg-gradient-to-b from-indigo-800 to-transparent opacity-70"></div>
+        <div class="relative flex items-center justify-center h-full text-center text-white fade-in">
+            <div class="space-y-6 slide-up">
+                <h1 class="text-4xl md:text-5xl montserrat-alternates-bold ">My Portfolio</h1>
+                <p class="text-lg md:text-2xl">Showcasing the creativity that powers me as a product and brand designer/web developer</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Portfolio Section -->
+    <section class="py-16 ">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl quattrocento-bold  text-orange-500 text-center mb-12 fade-in">Completed Project</h2>
+    
+            <!-- Web Design Section -->
+            <div class="mb-12">
+                <h3 class="text-2xl quattrocento-bold text-gray-800 dark:text-white mb-6">Web Design Projects</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- 7 arts theatre avondale website -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
+                        <img src="/assets/images/websites/7 arts Theatre.png" alt="7 Arts Theatre Avondale" class="rounded-lg mb-4 w-full">
+                        <h4 class="text-xl font-semibold text-gray-800">7 Arts Theatre Avondale</h4>
+                        <p class="text-gray-600 mb-4">A responsive and modern website tailored to showcase 7arts Theatre Avondale brand effectively, accross all channels</p>
+                        <a href="https://7artstheatre.com/" target="_blank" class="text-orange-500  hover:underline">View Project</a>
+                    </div>
+    
+                    <!-- Takadah UK -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
+                        <img src="/assets/images/websites/takadah.png" alt="Takadah UK" class="rounded-lg mb-4 w-full">
+                        <h4 class="text-xl font-semibold text-gray-800">Takadah</h4>
+                        <p class="text-gray-600 mb-4">An e-commerce site designed to maximize user engagement and sales conversions.</p>
+                        <a href="https://takadah.co.uk/" target="_blank" class="text-orange-500  hover:underline">View Project</a>
+                    </div>
+    
+                    <!-- Classic Reinsurance Brokers-->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
+                        <img src="/assets/images/websites/classicre.png" alt="Classic Reinsurance Brokers" class="rounded-lg mb-4 w-full">
+                        <h4 class="text-xl font-semibold text-gray-800">Classic Reinsurance Brokers</h4>
+                        <p class="text-gray-600 mb-4">A corporate professional website with a focus on a sleek, professional design and intuitive layout.</p>
+                        <a href="https://classicre.co.zw/" target="_blank" class="text-orange-500  hover:underline">View Project</a>
+                    </div>
+    
+                          <!-- Nature Extant Website -->
+                          <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
+                            <img src="/assets/images/websites/Nature Extant.png" alt="Classic Reinsurance Brokers" class="rounded-lg mb-4 w-full">
+                            <h4 class="text-xl font-semibold text-gray-800">Nature Extant Learning Center</h4>
+                            <p class="text-gray-600 mb-4">An E-learning website for teh students to get access of information of the programs register while have the acessibility functionality to switch between dark and light theme.</p>
+                            <a href="https://natureextant.com/" target="_blank" class="text-orange-500  hover:underline">View Project</a>
+                        </div>
+    
+                                  <!-- Giant Petroleum Website-->
+                             <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
+                                 <img src="/assets/images/websites/GPG.png" alt="Giant Petroleum Group" class="rounded-lg mb-4 w-full">
+                                 <h4 class="text-xl font-semibold text-gray-800">Giant Petroleum Group</h4>
+                                <p class="text-gray-600 mb-4">A corporate website with a focus on a sleek, professional design and intuitive layout.</p>
+                                <a href="https://giantpetroleumgroup.co.za/" target="_blank" class="text-orange-500  hover:underline">View Project</a>
+                           </div>
+    
+                                      <!-- Hukoshwa Contracting -->
+                                      <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
+                                        <img src="/assets/images/websites/Hukoshwa.png" alt="Hukoshwa Contracting" class="rounded-lg mb-4 w-full">
+                                        <h4 class="text-xl font-semibold text-gray-800">Hukoshwa Contracting</h4>
+                                       <p class="text-gray-600 mb-4">A corporate website for a contruction company, with a focus on a sleek, professional design and intuitive layout.</p>
+                                       <a href="https://www.hukoshwa.com/" target="_blank" class="text-orange-500  hover:underline">View Project</a>
+                                  </div>
+    
+                </div>
+            </div>
+    
+            <!-- Brand Design Section -->
+            <div>
+                <h3 class="text-2xl quattrocento-bold text-gray-800 dark:text-white mb-6">Brand Design Projects</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    
+                    <!-- Cruise Job Assit -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
+                        <img src="/assets/images/branding/Cruise Job.png" loading="lazy" alt="Cruise Job Assist" class="rounded-lg mb-4 w-full">
+                        <h4 class="text-xl font-semibold text-gray-800">Cruise Job Assit</h4>
+                        <p class="text-gray-600 mb-4">Crafted a unique brand identity, including logo, color palette, and guidelines.</p>
+                        <a href="https://www.behance.net/blacklemurs" target="_blank" class="text-orange-500 hover:underline">View Project</a>
+                    </div>
+    
+                    <!-- frostIce Reregirretor-->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
+                        <img src="/assets/images/branding/Frostice.png" loading="lazy" alt="FrostIce" class="rounded-lg mb-4 w-full">
+                        <h4 class="text-xl font-semibold text-gray-800">Frost Ice </h4>
+                        <p class="text-gray-600 mb-4">Developed a cohesive brand strategy and design assets for the brand to use on digital marketing.</p>
+                        <a href="https://www.behance.net/blacklemurs" target="_blank" class="text-orange-500 hover:underline">View Project</a>
+                    </div>
+    
+                    <!-- NELC -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
+                        <img src="/assets/images/branding/NELC.png" loading="lazy" alt="Nature Extant" class="rounded-lg mb-4 w-full">
+                        <h4 class="text-xl font-semibold text-gray-800">Nature Extant</h4>
+                        <p class="text-gray-600 mb-4"> Designed a brand identity for a learning insititute, that it can be fitted in all corporate prints</p>
+                        <a href="https://www.behance.net/blacklemurs" target="_blank" class="text-orange-500 hover:underline">View Project</a>
+                    </div>
+    
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
+                        <img src="/assets/images/branding/Evolve Roofing.png" loading="lazy" alt="Evolve Roofing" class="rounded-lg mb-4 w-full">
+                        <h4 class="text-xl font-semibold text-gray-800">Evolve Roofing</h4>
+                        <p class="text-gray-600 mb-4">Redesigned an existing brand to enhance visual consistency and appeal.</p>
+                        <a href="https://www.behance.net/blacklemurs" target="_blank" class="text-orange-500 hover:underline">View Project</a>
+                    </div>
+    
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
+                        <img src="/assets/images/branding/LexChem.png" loading="lazy" alt="LexChem Pharmaceutical" class="rounded-lg mb-4 w-full">
+                        <h4 class="text-xl font-semibold text-gray-800">LexChem Pharmaceutical</h4>
+                        <p class="text-gray-600 mb-4">Developed a cohesive brand strategy and design assets for digital marketing.</p>
+                        <a href="https://www.behance.net/blacklemurs" target="_blank" class="text-orange-500 hover:underline">View Project</a>
+                    </div>
+    
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
+                        <img src="/assets/images/branding/Mujegra.png" loading="lazy" alt="Mujegra Enterprises" class="rounded-lg mb-4 w-full">
+                        <h4 class="text-xl font-semibold text-gray-800">Mujegra Enterprises</h4>
+                        <p class="text-gray-600 mb-4">Developed a cohesive brand strategy and design assets for digital marketing.</p>
+                        <a href="https://www.behance.net/blacklemurs" target="_blank" class="text-orange-500 hover:underline">View Project</a>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- JavaScript for Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.fade-in, .slide-up');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+    
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+    
+    </body>
+</html>

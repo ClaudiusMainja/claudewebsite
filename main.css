@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .quattrocento-regular {
     font-family: "Quattrocento", serif;
     font-weight: 400;
