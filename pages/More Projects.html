@@ -89,7 +89,7 @@
         </nav>
     </header>
 
-    <body class="bg-slate-200 text-gray-800 dark:bg-gradient-to-tr from-gray-800 to-gray-950 dark:text:white work-sans-medium text-lg">
+    <body class="bg-slate-200 text-gray-800 dark:bg-gradient-to-tr from-gray-800 to-gray-950 dark:text:white work-sans-medium text-xl">
     
         <style>
             /* Custom Animations */
@@ -188,7 +188,7 @@
                         <img src="/assets/images/branding/Cruise Job.png" loading="lazy" alt="Cruise Job Assist" class="rounded-lg mb-4 w-full">
                         <h4 class="text-xl font-semibold text-gray-800">Cruise Job Assit</h4>
                         <p class="text-gray-600 mb-4">Crafted a unique brand identity, including logo, color palette, and guidelines.</p>
-                        <a href="https://www.behance.net/blacklemurs" target="_blank" class="text-orange-500 hover:underline">View Project</a>
+                        <a href="https://www.behance.net/claudiusmainja" target="_blank" class="text-orange-500 hover:underline">View Project</a>
                     </div>
     
                     <!-- frostIce Reregirretor-->
@@ -196,7 +196,7 @@
                         <img src="/assets/images/branding/Frostice.png" loading="lazy" alt="FrostIce" class="rounded-lg mb-4 w-full">
                         <h4 class="text-xl font-semibold text-gray-800">Frost Ice </h4>
                         <p class="text-gray-600 mb-4">Developed a cohesive brand strategy and design assets for the brand to use on digital marketing.</p>
-                        <a href="https://www.behance.net/blacklemurs" target="_blank" class="text-orange-500 hover:underline">View Project</a>
+                        <a href="https://www.behance.net/claudiusmainja" target="_blank" class="text-orange-500 hover:underline">View Project</a>
                     </div>
     
                     <!-- NELC -->
@@ -204,28 +204,28 @@
                         <img src="/assets/images/branding/NELC.png" loading="lazy" alt="Nature Extant" class="rounded-lg mb-4 w-full">
                         <h4 class="text-xl font-semibold text-gray-800">Nature Extant</h4>
                         <p class="text-gray-600 mb-4"> Designed a brand identity for a learning insititute, that it can be fitted in all corporate prints</p>
-                        <a href="https://www.behance.net/blacklemurs" target="_blank" class="text-orange-500 hover:underline">View Project</a>
+                        <a href="https://www.behance.net/claudiusmainja" target="_blank" class="text-orange-500 hover:underline">View Project</a>
                     </div>
     
                     <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
                         <img src="/assets/images/branding/Evolve Roofing.png" loading="lazy" alt="Evolve Roofing" class="rounded-lg mb-4 w-full">
                         <h4 class="text-xl font-semibold text-gray-800">Evolve Roofing</h4>
                         <p class="text-gray-600 mb-4">Redesigned an existing brand to enhance visual consistency and appeal.</p>
-                        <a href="https://www.behance.net/blacklemurs" target="_blank" class="text-orange-500 hover:underline">View Project</a>
+                        <a href="https://www.behance.net/claudiusmainja" target="_blank" class="text-orange-500 hover:underline">View Project</a>
                     </div>
     
                     <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
                         <img src="/assets/images/branding/LexChem.png" loading="lazy" alt="LexChem Pharmaceutical" class="rounded-lg mb-4 w-full">
                         <h4 class="text-xl font-semibold text-gray-800">LexChem Pharmaceutical</h4>
                         <p class="text-gray-600 mb-4">Developed a cohesive brand strategy and design assets for digital marketing.</p>
-                        <a href="https://www.behance.net/blacklemurs" target="_blank" class="text-orange-500 hover:underline">View Project</a>
+                        <a href="https://www.behance.net/claudiusmainja" target="_blank" class="text-orange-500 hover:underline">View Project</a>
                     </div>
     
                     <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
                         <img src="/assets/images/branding/Mujegra.png" loading="lazy" alt="Mujegra Enterprises" class="rounded-lg mb-4 w-full">
                         <h4 class="text-xl font-semibold text-gray-800">Mujegra Enterprises</h4>
                         <p class="text-gray-600 mb-4">Developed a cohesive brand strategy and design assets for digital marketing.</p>
-                        <a href="https://www.behance.net/blacklemurs" target="_blank" class="text-orange-500 hover:underline">View Project</a>
+                        <a href="https://www.behance.net/claudiusmainja" target="_blank" class="text-orange-500 hover:underline">View Project</a>
                     </div>
     
                 </div>
@@ -247,6 +247,147 @@
             }, { threshold: 0.1 });
     
             sections.forEach(section => observer.observe(section));
+        });
+    </script>
+
+     <!-- Scripts -->
+     <script>
+        // Loading Screen
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            loader.style.transition = 'opacity 0.5s ease-out';
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500);
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+            menuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Scroll Animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                
+                if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+
+        // Initial check for elements in view
+        fadeInOnScroll();
+        
+        // Listen for scroll events
+        window.addEventListener('scroll', fadeInOnScroll);
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                header.classList.remove('shadow-lg');
+                header.style.transform = 'translateY(0)';
+            } else if (currentScroll > lastScroll) {
+                // Scrolling down
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                // Scrolling up
+                header.classList.add('shadow-lg');
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            const formObject = Object.fromEntries(formData);
+            
+            try {
+                // Replace with your actual form submission endpoint
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formObject),
+                });
+                
+                if (response.ok) {
+                    alert('Message sent successfully!');
+                    contactForm.reset();
+                } else {
+                    throw new Error('Failed to send message');
+                }
+            } catch (error) {
+                alert('There was an error sending your message. Please try again later.');
+                console.error('Error:', error);
+            }
+        });
+
+        // Active Navigation Link Highlighting
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-blue-600');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('text-blue-600');
+                }
+            });
+        });
+    </script>
+
+    <!-- Deferred Loading for Performance -->
+    <script defer>
+        // Lazy load images
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img[data-src]');
+            
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
         });
     </script>
     
