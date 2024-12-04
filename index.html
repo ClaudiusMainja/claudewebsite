@@ -19,6 +19,10 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="/scripts.js" ></script>
     
     <!-- Schema.org markup for Google -->
@@ -85,6 +89,40 @@
             </div>
         </nav>
     </header>
+    
+    <Script>
+        // Check system theme preference
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+               document.documentElement.classList.add('dark');
+           }
+           
+           // Initialize particles
+           document.addEventListener('DOMContentLoaded', function() {
+               particlesJS('particles-js', {
+                   particles: {
+                       number: { value: 12 },
+                       color: { value: '#cff' },
+                       shape: { type: 'circle' },
+                       opacity: {
+                           value: 0.3,
+                           random: false
+                       },
+                       size: {
+                           value: 3,
+                           random: true
+                       },
+                       move: {
+                           enable: true,
+                           speed: 4,
+                           direction: 'none',
+                           random: false,
+                           straight: false,
+                           outModes: { default: 'bounce' }
+                       }
+                   }
+               });
+           });
+       </Script>
 
     <body class=" work-sans-medium bg-white text-neutral-800 dark:bg-gray-950 dark:text-slate-100 text-xl">
         <!-- Loading Screen -->
@@ -98,6 +136,8 @@
                 <img src="Assets/images/Home hero.png" alt="Hero background" class="w-full h-full object-cover filter brightness-50 sm:object-cover"/>
                 <div class="absolute inset-0 bg-gray-950/80"></div>
             </div>
+             <!-- Particles effect -->
+        <div id="particles-js" class="absolute inset-0 z-10 "></div>
             
             <div class="relative max-w-7xl mx-auto px-4 py-24 sm:px-8 lg:px-8 flex flex-col md:flex-row items-center justify-between quattrocento-bold sm:h-screen">
                 <div class="text-white md:w-2/3 text-center md:text-left" data-aos="fade-right">
@@ -121,7 +161,7 @@
                     </div>
                 </div>
                 <div class="md:w-1/2 mt-12 md:mt-0 float-animation" data-aos="fade-left">
-                    <img src="assets/images/claude.jpg" alt="Claudius Mainja" class="w-full max-w-md mx-auto rounded-xl"/>
+                    <img src="assets/images/claude.png" alt="Claudius Mainja" class="w-full h-full max-w-md mx-auto rounded-xl "/>
                 </div>
             </div>
         </div>
