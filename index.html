@@ -1,31 +1,79 @@
+<!--
+/**
+ * Personal Portfolio Website for Claudius Mainja
+ * 
+ * This is the main index.html file that serves as the homepage for a professional portfolio website.
+ * The site showcases Claudius Mainja's work as a Product Designer & Web Developer.
+ *
+ * Key Features:
+ * - Responsive navigation with mobile menu support
+ * - Hero section with personal introduction
+ * - Featured projects showcase
+ * - Professional experience timeline
+ * - Service offerings section
+ * - Contact button with modal options
+ * - Footer with social media links
+ *
+ * Technical Components:
+ * - Uses Tailwind CSS for styling
+ * - Implements GSAP for animations
+ * - Includes Schema.org markup for SEO
+ * - Optimized meta tags for social sharing
+ * - Custom JavaScript for interactive features
+ *
+ * Dependencies:
+ * - Tailwind CSS (via CDN)
+ * - Font Awesome Icons
+ * - GSAP Animation Library
+ * - jQuery
+ * 
+ * File Structure:
+ * - Head: Meta tags, SEO optimization, and resource loading
+ * - Header: Navigation and branding
+ * - Main Content: Multiple sections including hero, portfolio, experience
+ * - Footer: Contact information and social links
+ *
+ * @author Claudius Mainja
+ * @version 1.0
+ * @lastModified 2024
+ */
+-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Claudius Mainja - Product Designer & Web Developer with 10+ years of experience in brand design, strategy, and positioning. Based in Cape Town.">
+    <meta name="description"
+        content="Claudius Mainja - Product Designer & Web Developer with 10+ years of experience in brand design, strategy, and positioning. Based in Cape Town.">
     <meta name="keywords" content="product design, web development, UI/UX design, brand strategy, Cape Town designer">
     <meta name="author" content="Claudius Mainja">
-    
+
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Claudius Mainja - Product Designer & Web Developer">
-    <meta property="og:description" content="Portfolio of Claudius Mainja - Crafting digital experiences that combine aesthetic excellence with functional design">
+    <meta property="og:description"
+        content="Portfolio of Claudius Mainja - Crafting digital experiences that combine aesthetic excellence with functional design">
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/images/branding-01.png">
-    
+
     <title>Claudius Mainja | Product Designer & Web Developer | Cape Town</title>
-    <link rel="icon" type="image/x-icon" href="/images/assets/favicon.png">
+    <link rel="icon" href="/icon.png" type="image/png" />
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    
+    <script src="https://kit.fontawesome.com/75ac30adf6.js" crossorigin="anonymous"></script>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-    <script src="/scripts.js" ></script>
-    
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="/scripts.js"></script>
+    <link rel="stylesheet" href="/src/main.css">
+    <link rel="stylesheet" href="/src/experience.css">
+    <link rel="stylesheet" href="/src/portfolio.css">
+
     <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
     {
@@ -46,499 +94,776 @@
     }
     </script>
 
-
 </head>
 
 
-    <!-- Header -->
-    <header id="header" class="fixed w-full z-40 transition-all duration-300 work-sans-medium ">
-        <nav class="bg-white bg-opacity-95 shadow-lg backdrop-blur-sm pt-8 pb-8 top-0">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-16">
-                    <a href="/index.html" class="flex items-center space-x-2">
-                        <img src="/assets/images/Branding-01.png" alt="logo" height="200px" width="200px" >
+<header id="header" class="fixed w-full z-40 transition-all duration-300 font-regular">
+    <nav class="bg-white bg-opacity-95 shadow-lg backdrop-blur-sm pt-6 pb-6 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="/index.html" class="flex items-center space-x-2 transition-transform duration-300 hover:scale-105">
+                    <img src="/assets/images/Branding-01.png" alt="logo" height="200px" width="200px">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="/index.html" class="nav-link relative text-gray-900 hover:text-orange-600 px-3 py-2 transition-all duration-300 group">
+                        <span>Home</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    
-                    <!-- Desktop Navigation -->
-                    <div class="hidden md:flex space-x-8">
-                        <a href="/index.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">Home</a>
-                        <a href="/pages/about.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">About</a>
-                        <a href="/pages/Portfolio.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">Portfolio</a>
-                        <a href="/pages/Contact.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">Contact</a>
-                        <a href="/assets/doc/Claudius Mainja Resume.docx" target="_blank" class="px-6 py-2 text-white bg-gradient-to-r from-orange-400 to-orange-600 rounded-lg hover:shadow-lg transition duration-300 transform hover:-translate-y-0.5">
-                            Resume
-                        </a>
-                    </div>
-                    
-                    <!-- Mobile Menu Button -->
-                    <button id="menuBtn" class="md:hidden text-gray-900 focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    <a href="/pages/about.html" class="nav-link relative text-gray-900 hover:text-orange-600 px-3 py-2 transition-all duration-300 group">
+                        <span>About</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="/pages/Portfolio.html" class="nav-link relative text-gray-900 hover:text-orange-600 px-3 py-2 transition-all duration-300 group">
+                        <span>Portfolio</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="/pages/Contact.html" class="nav-link relative text-gray-900 hover:text-orange-600 px-3 py-2 transition-all duration-300 group">
+                        <span>Contact</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="/assets/doc/Claudius Mainja Resume.docx" target="_blank"
+                        class="px-6 py-2 text-white bg-gradient-to-r from-orange-400 to-orange-600 rounded-full hover:shadow-xl transition duration-300 transform hover:-translate-y-1 hover:scale-105 flex items-center">
+                        <span>Resume</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                         </svg>
-                    </button>
+                    </a>
                 </div>
-            </div>
-            
-            <!-- Mobile Navigation -->
-            <div id="mobileMenu" class="hidden md:hidden bg-white">
-                <div class="px-2 pt-2 pb-3 space-y-1">
-                    <a href="/index.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Home</a>
-                    <a href="/pages/Portfolio.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Portfolio</a>
-                    <a href="/pages/about.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">About</a>
-                    <a href="/pages/Contact.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Contact</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-    
-    <Script>
-        // Check system theme preference
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-               document.documentElement.classList.add('dark');
-           }
-           
-           // Initialize particles
-           document.addEventListener('DOMContentLoaded', function() {
-               particlesJS('particles-js', {
-                   particles: {
-                       number: { value: 12 },
-                       color: { value: '#cff' },
-                       shape: { type: 'circle' },
-                       opacity: {
-                           value: 0.3,
-                           random: false
-                       },
-                       size: {
-                           value: 3,
-                           random: true
-                       },
-                       move: {
-                           enable: true,
-                           speed: 4,
-                           direction: 'none',
-                           random: false,
-                           straight: false,
-                           outModes: { default: 'bounce' }
-                       }
-                   }
-               });
-           });
-       </Script>
 
-    <body class=" work-sans-medium bg-white text-neutral-800 dark:bg-gray-950 dark:text-slate-100 text-xl">
-        <!-- Loading Screen -->
-        <div id="loader" class="fixed inset-0 z-50 flex items-center justify-center bg-white">
-            <div class="loader w-12 h-12 border-4 border-gray-200 rounded-lg"></div>
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden text-gray-900 focus:outline-none">
+                    <i class="fa-solid fa-bars w-7 h-7"></i>
+                </button>
+            </div>
         </div>
 
-        <!-- Hero Section -->
-        <div class="relative min-h-screen flex items-center justify-center overflow-hidden">
-            <div class="absolute inset-0">
-                <img src="Assets/images/Home hero.png" alt="Hero background" class="w-full h-full object-cover filter brightness-50 sm:object-cover"/>
-                <div class="absolute inset-0 bg-gray-950/80"></div>
+        <!-- Mobile Navigation -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="/index.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Home</a>
+                <a href="/pages/Portfolio.html"
+                    class="block px-3 py-2 text-gray-900 hover:text-orange-500">Portfolio</a>
+                <a href="/pages/about.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">About</a>
+                <a href="/pages/Contact.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Contact</a>
             </div>
-             <!-- Particles effect -->
-        <div id="particles-js" class="absolute inset-0 z-10 "></div>
-            
-            <div class="relative max-w-7xl mx-auto px-4 py-24 sm:px-8 lg:px-8 flex flex-col md:flex-row items-center justify-between quattrocento-bold sm:h-screen">
-                <div class="text-white md:w-2/3 text-center md:text-left" data-aos="fade-right">
-                    <h1 class="text-4xl md:text-6xl sm:text-8xl  mb-6 mt-12">
-                        Hi, I'm Claudius Mainja. <span class="text-orange-400"> I'm a Product Designer & Web Developer</span>
-                    </h1>
-                    <p class="text-xl md:text-2xl mb-8 text-gray-300 quattrocento-regular">
-                        As an experienced product and brand designer/web developer with over 10 years, I specialize in creating visually stunning and user-friendly digital experiences that drive business growth.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start ">
-                        <a href="pages/Portfolio.html" target="_blank">
-                        <button class="px-8 py-4 bg-gradient-to-r from-orange-400 to-orange-600 rounded-lg text-lg  hover:shadow-xl transition duration-300 transform hover:-translate-y-0.5">
-                            Recent Projects
-                        </button>
-                    </a>
-                    <a href="assets/doc/Claudius Mainja Resume.docx" target="_blank">
-                        <button class="px-8 py-4 border-2 border-white rounded-lg text-lg  hover:bg-white hover:text-orange-400 transition duration-300">
-                            Resume Download
-                        </button>
-                    </a>
+        </div>
+    </nav>
+</header>   
+  
+<body class="bg-white text-neutral-800 dark:bg-gray-950 dark:text-slate-100 text-xl">
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+       <!-- Hero Section -->
+       <section class="hero-section bg-gradient-to-br from-[#121212] via-[#1e1e1e] to-[#121212] opacity-90">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text pt-60">
+                    <h1 class="hero-title">Hello 👋🏼, I'm <br><span class="text-white">Claudius Mainja</span></h1>
+                    <h2 class="hero-subtitle">Product Designer & Developer</h2>
+                    <p class="text-white mb-8 work-sans-medium">With over 10 years of experience crafting digital
+                        experiences that combine aesthetic excellence with functional design. I specialize in creating
+                        innovative solutions that drive business growth and user engagement.</p>
+                    <div class="hero-actions">
+                        <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                        <a href="mailto:info@claudius-mainja.com" target="_blank" class="btn btn-outline">Contact Me</a>
                     </div>
                 </div>
-                <div class="md:w-1/2 mt-12 md:mt-0 float-animation" data-aos="fade-left">
-                    <img src="assets/images/claude.png" alt="Claudius Mainja" class="w-full h-full max-w-md mx-auto rounded-xl "/>
+                <div class="hero-image-container">
+                    <div class="hero-image ">
+                        <img src="/assets/images/me.png" alt="Claudius Mainja" loading="eager">
+                    </div>
+                    <div class="hero-background-shape"></div>
+                </div>
+            </div>
+
+            <div class="w-full overflow-hidden  mt-40">
+                <div class="flex marquee">
+                    <div class="flex shrink-0 gap-8 py-4 px-2 items-center animate-marquee">
+                        <span class="text-2xl font-bold text-neutral-800 dark:text-gray-400 uppercase opacity-70">Product Design</span>
+                        <span class="text-2xl font-bold text-neutral-800 dark:text-gray-400 uppercase opacity-70">|</span>
+                        <span class="text-2xl font-bold text-neutral-800 dark:text-gray-400 uppercase opacity-70">UX/UI</span>
+                        <span class="text-2xl font-bold text-neutral-800 dark:text-gray-400 uppercase opacity-70">|</span>
+                        <span class="text-2xl font-bold text-neutral-800 dark:text-gray-400 uppercase opacity-70">Brand Identity</span>
+                        <span class="text-2xl font-bold text-neutral-800 dark:text-gray-400 uppercase opacity-70">|</span>
+                        <span class="text-2xl font-bold text-neutral-800 dark:text-gray-400 uppercase opacity-70">Web Development</span>
+                        <span class="text-2xl font-bold text-neutral-800 dark:text-gray-400 uppercase opacity-70">|</span>
+                        <span class="text-2xl font-bold text-neutral-800 dark:text-gray-400 uppercase opacity-70">Product Design</span>
+                        <span class="text-2xl font-bold text-neutral-800 dark:text-gray-400 uppercase opacity-70">|</span>
+                        <span class="text-2xl font-bold text-neutral-800 dark:text-gray-400 uppercase opacity-70">UX/UI</span>
+                        <span class="text-2xl font-bold text-neutral-800 dark:text-gray-400 uppercase opacity-70">|</span>
+                        <span class="text-2xl font-bold text-neutral-800 dark:text-gray-400 uppercase opacity-70">Brand Identity</span>
+                        <span class="text-2xl font-bold text-neutral-800 dark:text-gray-400 uppercase opacity-70 items-center">|</span>
+                        <span class="text-2xl font-bold text-neutral-800 dark:text-gray-400 uppercase opacity-70">Web Development</span>
+                    </div>
                 </div>
             </div>
         </div>
+        <script src="/javascript/portfolio.js"></script>
 
-<!--Work Experience-->
-        <section class="py-16 bg-slate-200">
-            <div class="container mx-auto px-4">
-              <h2 class="text-4xl quattrocento-bold  mb-8 text-center text-gray-900">Work Experience</h2>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-                <!--Blacklemur Innovations -Global -->
-                <div class="dark:bg-gray-950 rounded-lg overflow-hidden shadow-lg p-6 fade-in">
-                  <h3 class="text-2xl">Product Designer and Web Developer</h3>
-                  <p class="mb-2 text-orange-400">Blacklemur Innovations -Hybrid | 2019 - Present</p>
-                  <p>As a product designer and web developer at Blacklemur Innovations, I've led the design and development of award-winning digital products for a diverse range of clients. My responsibilities include:</p>
-                  <ul class="list-disc pl-6 mt-4">
-                    <li>Spearheaded numerous projects involving website and mobile application design and development to drive innovation and meet client objectives.</li>
-                    <li>Delivered tailored design and development solutions by collaborating closely with clients, actively listening to their unique needs, and aligning solutions with their goals</li>
-                    <li>Ensured a seamless user experience and achieved successful implementation of designs through effective collaboration with the development team, resulting in high user satisfaction and positive feedback.</li>
-                    <li>Acted as a mentor and coach to junior designers, providing guidance, feedback, and support to foster their professional growth and development, contributing to a collaborative and high-performing team culture recognized for delivering exceptional design outcomes.</li>
-                  </ul>
-                </div>
-
-                <!--Higherlife Foundation-->
-                <div class="dark:bg-gray-950 rounded-lg overflow-hidden shadow-lg p-6 fade-in">
-                    <h3 class="text-2xl ">Digital Designer/Consultant </h3>
-                    <p class="mb-2 text-orange-400"> <a href="www.global-intercessors.com" target="_blank">Higherlife Foundation -Hybrid | 2022 - Present</a></p>
-                    <p>As a Digital Designer at Higherlife Foundation, I've led the design and communication team of the faith department on visual communication. My responsibilities include:</p>
-                    <ul class="list-disc pl-6 mt-4">
-                      <li>Provided exceptional design consulting services to various faith brands within the organization, creating captivating logos, web designs, and marketing materials, resulting in improved brand perception and engagement.</li>
-                      <li>Crafted visually engaging digital marketing campaigns by collaborating with the marketing team, driving brand awareness and expanding the organization’s reach</li>
-                      <li>Enhanced user experience through strategic and user-friendly website designs and the incorporation of interactive elements, leading to increased user engagement and longer site visits.</li>
-                      <li>Prototyping and testing design concepts</li>
-                      <li>Collaborating with cross-functional teams to deliver exceptional user experiences</li>
-                    </ul>
-                  </div>
-
-                  <!--Helens Project-->
-                  <div class="dark:bg-gray-950 rounded-lg overflow-hidden shadow-lg p-6 fade-in">
-                    <h3 class="text-2xl">Lead Graphic Designer</h3>
-                    <p class="mb-2 text-orange-400"><a href="www.hlproject.org" target="_blank" >Helens Project -Remote | October 2018 - July 2022</a></p>
-                    <p>As a lead designer at Helens Project I've led the design and development of award-winning organization for a diverse range of clients. My responsibilities included:</p>
-                    <ul class="list-disc pl-6 mt-4">
-                      <li>Led the design team at Helen’s Project, delivering creative and effective branding and marketing solutions that elevated the brand’s visibility and market position</li>
-                      <li>Designing intuitive user interfaces and interactions</li>
-                      <li>Developed visually appealing websites, brochures, and marketing materials, ensuring they were aligned with the brand’s visual identity to reinforce brand recognition and consistency.</li>
-                      <li>CMentored and guided a team of junior designers, fostering their professional growth, and elevating the overall quality of design work produced by the team.</li>
-                    </ul>
-                  </div>
-
-                <div class="dark:bg-gray-950 rounded-lg overflow-hidden shadow-lg p-6 fade-in" style="animation-delay: 0.2s;">
-                  <h3 class="text-xl ">Senior Product Designer & Web Developer</h3>
-                  <p class="mb-2 text-orange-400">Onx Labs | South Africa - Remote | January 2024 – Present</p>
-                  <p>At Onx Labs, I honed my skills in research, brand identity design and strategy. My key accomplishments include:</p>
-                  <ul class="list-disc pl-6 mt-4">
-                    <li>Developed brand identities for several high-profile startups and established companies</li>
-                    <li>Created comprehensive brand guidelines and assets for clients</li>
-                    <li>Designed and prototyped user-centric solutions for multiple client projects, addressing key user needs and improving user experiencess</li>
-                    <li>Led user research process for a new product launch, effectively identifying user needs and translating them into a successful product experience</li>
-                    <li>•	Effectively communicated design concepts and provided technical documentation to stakeholders, facilitating successful product development.</li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
-          </section>
+    </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 px-4">
+    <section id="portfolio" class="py-20 px-4 font-['Montserrat'] bg-dark">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl quattrocento-bold mb-12 text-center fade-in">Featured Projects</h2>
+
+            <h2
+                class="text-4xl sm:text-4xl font-bold mb-12 text-center fade-in bg-white px-10 py-5 sm:px-20 sm:py-10 text-orange-400 rounded-lg">
+                My top 3 <span class="text-[#09073D]">Featured Projects</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Nature Extand Website -->
-                <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow fade-in">
-                    <img src="assets/images/Nature Extant.png" alt="Nature Extand" class="w-full h-48 object-cover hover:animate-pulse">
+                <article
+                    class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow fade-in">
+                    <img src="assets/images/Nature Extant.png" alt="Nature Extand"
+                        class="w-full h-48 object-cover hover:animate-pulse">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2"><a href="https://natureextant.com/" target="_blank"> Nature Extant Learning Center</a></h3>
-                        <p class="text-gray-600 mb-4 work-sans-medium">Completed the brand design project of an organization called  Nature Extant Learning Center, with the services of web development from UX Design, Sketches, prototype and the final design.</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2"><a href="https://natureextant.com/"
+                                target="_blank">Nature Extant Learning Center</a></h3>
+                        <p class="text-gray-600 mb-4 font-regular">From designing distinctive brand icons and a robust design system to producing compelling marketing materials and developing new website functionalities, I delivered a holistic digital solution. This project showcases my ability to manage the full spectrum of brand and web development, resulting in a significantly enhanced user engagement.</p>
 
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-lg">Brand strategy + positioning</span>
-                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-lg">Strategy</span>
-                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-lg">UI/UX</span>
-                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-lg">Development</span>
+                            <span class="bg-[#121212] text-white text-sm px-3 py-1 rounded-lg font-regular">Brand
+                                strategy + positioning</span>
+                            <span
+                                class="bg-[#121212] text-white text-sm px-3 py-1 rounded-lg font-regular">Strategy</span>
+                            <span class="bg-[#121212] text-white text-sm px-3 py-1 rounded-lg font-regular">UI/UX</span>
+                            <span
+                                class="bg-[#121212] text-white text-sm px-3 py-1 rounded-lg font-regular">Development</span>
                         </div>
                     </div>
                 </article>
-                
-                
-                 <!-- Global Intercessors -->
-                 <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow fade-in">
-                    <img src="assets/images/global intercessors.png" alt="Global Intercessors" class="w-full h-48 object-cover hover:animate-pulse">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2"><a href="https://global-intercessors.com/" target="_blank">Global Intercessors </a></h3>
-                        <p class="text-gray-600 mb-4 work-sans-medium">worked with Higherlife Foundation focusing on the brand design and management, digital marketing services + web development of the Global Intercessors the faith brand within the organization.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-lg">Branding</span>
-                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-lg">Strategy</span>
-                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-lg">UI/UX</span>
-                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-lg">Development</span>
-                        </div>
-                    </div>
-                </article>      
-                
 
-                  <!-- Classic Reinsurance-->
-                  <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow fade-in">
-                    <img src="assets/images/classicre.png" alt="Classic Reinsurance" class="w-full h-48 object-cover lazy-load hover:animate-pulse">
+                <!-- Ministry of ICT Zimbabwe -->
+                <article
+                    class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow fade-in">
+                    <img src="assets/images/ministryofict.png" alt="Ministry of ICT Zimbabwe "
+                        class="w-full h-48 object-cover hover:animate-pulse">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2"><a href="https://classicre.co.zw/" target="_blank"> Classic Resinsurance Brokers</a></h3>
-                        <p class="text-gray-600 mb-4 work-sans-medium"> worked with Classic Reinsurance Brokers a reinsurance broker focusing on the digital marketing services + web development of the organization.</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2"><a href="https://remarkable-souffle-a67666.netlify.app/"
+                                target="_blank">Ministry of ICT, Postal and Courier Services </a></h3>
+                        <p class="text-gray-600 mb-4 font-regular">I led the UI/UX research and redesign of the ministry's website, prioritizing accessibility for all users. This project demonstrates my commitment to creating inclusive digital experiences, resulting in a more user-friendly and efficient platform for public service information.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-lg">Strategy</span>
-                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-lg">UI/UX</span>
-                            <span class="bg-gray-800 text-white text-sm px-3 py-1 rounded-lg">Development</span>
+                            <span
+                                class="bg-[#121212] text-white text-sm px-3 py-1 rounded-lg font-regular">Branding</span>
+                            <span
+                                class="bg-[#121212] text-white text-sm px-3 py-1 rounded-lg font-regular">Strategy</span>
+                            <span class="bg-[#121212] text-white text-sm px-3 py-1 rounded-lg font-regular">UI/UX</span>
+                            <span
+                                class="bg-[#121212] text-white text-sm px-3 py-1 rounded-lg font-regular">Development</span>
                         </div>
                     </div>
-                </article>                    
-                
-                
-                <!-- more project cards here -->
+                </article>
+
+                <!-- Synced by Love:-->
+                <article
+                    class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow fade-in">
+                    <img src="assets/images/syncedbylove.png" alt="Synced by Love"
+                        class="w-full h-48 object-cover lazy-load hover:animate-pulse">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2"><a href="https://syncedbylove.com/"
+                                target="_blank"> Synced by Love</a></h3>
+                        <p class="text-gray-600 mb-4 font-regular"> I designed a visually captivating and highly engaging website and user interface tailored to the specific target audience. This project highlights my ability to create intuitive and aesthetically pleasing digital experiences that resonate with niche markets.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="bg-[#121212] text-white text-sm px-3 py-1 rounded-lg font-regular">Strategy</span>
+                            <span class="bg-[#121212] text-white text-sm px-3 py-1 rounded-lg font-regular">UI/UX</span>
+                            <span
+                                class="bg-[#121212] text-white text-sm px-3 py-1 rounded-lg font-regular">Development</span>
+                        </div>
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
-
-   <!--My Design Process-->
-    <section class="py-16">
+    <!--My Design Process-->
+    <section class="py-16 bg-gradient-to-br from-[#121212] via-[#1e1e1e] to-[#121212] opacity-90">
         <div class="container mx-auto px-4">
-          <h2 class="text-4xl  mb-8 text-center  quattrocento-bold ">My Design Process</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 fade-in">
-              <h3 class="text-xl mb-4"> Stage 01:  Discovery</h3>
-              <p>I start by thoroughly understanding your business, target audience, and project goals to ensure I deliver a tailored solution.</p>
+            <h2 class="text-3xl  mb-8 text-center  font-bold ">My Design Process</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="dark:bg-[#121212] rounded-lg overflow-hidden shadow-lg p-6 fade-in">
+                    <h3 class="text-xl mb-4"> Stage 01: Discovery</h3>
+                    <p>I start by thoroughly understanding your business, target audience, and project goals to ensure I
+                        deliver a tailored solution.</p>
+                </div>
+                <div class="dark:bg-[#121212] rounded-lg overflow-hidden shadow-lg p-6 fade-in"
+                    style="animation-delay: 0.2s;">
+                    <h3 class="text-xl  mb-4 ">Stage 02: Ideation</h3>
+                    <p>Using my design expertise and creativity, I generate numerous concepts and ideas to explore the
+                        best approach for your project.</p>
+                </div>
+                <div class="dark:bg-[#121212] rounded-lg overflow-hidden shadow-lg p-6 fade-in"
+                    style="animation-delay: 0.4s;">
+                    <h3 class="text-xl  mb-4 ">Stage 03: Execution</h3>
+                    <p>I meticulously craft the final design, ensuring attention to detail and a seamless user
+                        experience. I also provide ongoing support and iteration.</p>
+                </div>
             </div>
-            <div class="dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 fade-in" style="animation-delay: 0.2s;">
-              <h3 class="text-xl  mb-4 ">Stage 02: Ideation</h3>
-              <p>Using my design expertise and creativity, I generate numerous concepts and ideas to explore the best approach for your project.</p>
-            </div>
-            <div class="dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 fade-in" style="animation-delay: 0.4s;">
-              <h3 class="text-xl  mb-4 ">Stage 03: Execution</h3>
-              <p>I meticulously craft the final design, ensuring attention to detail and a seamless user experience. I also provide ongoing support and iteration.</p>
-            </div>
-          </div>
         </div>
-      </section>
-  
+    </section>
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section font-['Montserrat']">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge font-regular rounded-lg">let's dive into my</span>
+                <h2 class="section-title fade-in font-bold">Professional Experience</h2>
+                <p class="section-subtitle font-medium">Of a decade creating impactful digital products that drive
+                    businesses growth</p>
+            </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4 bg-gray-50">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl quattrocento-bold  text-gray-900 mb-12 text-center fade-in">Get in Touch</h2>
-            <p id="success-message" class="hidden text-center"> Thank you for reaching out and trusting me with your brand</p>
-            <form onsubmit="submitForm(event)" id="applicationForm" class="space-y-6 fade-in"  action="https://submit-form.com/PTTuGlWSt" method="POST" enctype="multipart/form-data" novalidate > 
-                <div>
-                    <label for="name" class="block text-gray-700 mb-2">Name</label>
-                    <input type="text" id="name" name="name" required 
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                           <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+            <div class="experience-timeline">
+                <!-- Timeline Progress Bar -->
+                <div class="timeline-progress">
+                    <div class="timeline-progress-bar"></div>
                 </div>
-                <div>
-                    <label for="email" class="block text-gray-700 mb-2">Email</label>
-                    <input type="email" id="email" name="email" required 
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                           </div>
-             
-                <div>
-                    <label for="message" class="block text-gray-700 mb-2">Message</label>
-                    <textarea id="message" name="message" rows="4" required 
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black"></textarea>
+
+                <!-- Onx Labs Work experience -->
+                <div class="experience-cards">
+                    <div class="experience-card" data-year="2024">
+                        <div class="experience-card-inner">
+                            <div class="card-year">
+                                <span class="font-bold">2024</span>
+                                <div class="year-connector"></div>
+                            </div>
+                            <div class="card-content">
+                                <div class="company-logo">
+                                    <div class="logo-placeholder font-bold">ONX</div>
+                                </div>
+                                <div class="card-details">
+                                    <div class="card-header">
+                                        <h3 class="experience-role font-bold">Senior Product Designer & Developer</h3>
+                                        <div class="company-info">
+                                            <h4 class="company-name font-bold">Onx Labs | South Africa</h4>
+                                            <span class="employment-duration font-medium">2024 - Present</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="font-regular">Leading end-to-end product design and development for
+                                            high-profile clients:</p>
+                                        <ul class="achievements">
+                                            <li>
+                                                <div class="achievement-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="m9 12 2 2 4-4"></path>
+                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                    </svg>
+                                                </div>
+                                                <span class="font-regular">Designed and prototyped user-centric
+                                                    solutions for multiple client projects, addressing key user needs
+                                                    and improving user experiencess</span>
+                                            </li>
+                                            <li>
+                                                <div class="achievement-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="m9 12 2 2 4-4"></path>
+                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                    </svg>
+                                                </div>
+                                                <span class="font-regular">Increased user engagement by 45% through UX
+                                                    improvements</span>
+                                            </li>
+                                            <li>
+                                                <div class="achievement-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="m9 12 2 2 4-4"></path>
+                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                    </svg>
+                                                </div>
+                                                <span class="font-regular">Led user research process for a new product
+                                                    launch, effectively identifying user needs and translating them into
+                                                    a successful product experience</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="skills">
+                                            <span class="skill-tag font-medium">Product Strategy</span>
+                                            <span class="skill-tag font-medium">UI/UX Design</span>
+                                            <span class="skill-tag font-medium">React</span>
+                                            <span class="skill-tag font-medium">Design Systems</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Higherlife Foundation work experience-->
+                    <div class="experience-card" data-year="2022">
+                        <div class="experience-card-inner">
+                            <div class="card-year">
+                                <span>2022</span>
+                                <div class="year-connector"></div>
+                            </div>
+                            <div class="card-content">
+                                <div class="company-logo">
+                                    <div class="logo-placeholder">HLF</div>
+                                </div>
+                                <div class="card-details">
+                                    <div class="card-header">
+                                        <h3 class="experience-role">Digital Designer/Consultant</h3>
+                                        <div class="company-info">
+                                            <h4 class="company-name">Higherlife Foundation | Zimbabwe</h4>
+                                            <span class="employment-duration">2022 - 2024</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Led the design and communication team of the faith department:</p>
+                                        <ul class="achievements">
+                                            <li>
+                                                <div class="achievement-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="m9 12 2 2 4-4"></path>
+                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                    </svg>
+                                                </div>
+                                                <span>Managed design system for 5+ brand properties and Ccollaborated
+                                                    with cross-functional teams to deliver exceptional user
+                                                    experiences</span>
+                                            </li>
+                                            <li>
+                                                <div class="achievement-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="m9 12 2 2 4-4"></path>
+                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                    </svg>
+                                                </div>
+                                                <span>Prototyping and testing design concepts</span>
+                                            </li>
+                                            <li>
+                                                <div class="achievement-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="m9 12 2 2 4-4"></path>
+                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                    </svg>
+                                                </div>
+                                                <span>Increased digital engagement by 70%</span>
+                                            </li>
+                                            <li>
+                                                <div class="achievement-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="m9 12 2 2 4-4"></path>
+                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                    </svg>
+                                                </div>
+                                                <span>Enhanced user experience through strategic and user-friendly
+                                                    website designs and the incorporation of interactive elements,
+                                                    leading to increased user engagement and longer site visits.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="skills">
+                                            <span class="skill-tag">Brand Strategy</span>
+                                            <span class="skill-tag">Digital Marketing</span>
+                                            <span class="skill-tag">Team Leadership</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Blacklemur Innovations-->
+                    <div class="experience-card" data-year="2019">
+                        <div class="experience-card-inner">
+                            <div class="card-year">
+                                <span>2019</span>
+                                <div class="year-connector"></div>
+                            </div>
+                            <div class="card-content">
+                                <div class="company-logo">
+                                    <div class="logo-placeholder">BI</div>
+                                </div>
+                                <div class="card-details">
+                                    <div class="card-header">
+                                        <h3 class="experience-role">Product Designer and Web Developer</h3>
+                                        <div class="company-info">
+                                            <h4 class="company-name">Blacklemur Innovations | Remote</h4>
+                                            <span class="employment-duration">2019 - Present</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Delivered comprehensive design and development solutions:</p>
+                                        <ul class="achievements">
+                                            <li>
+                                                <div class="achievement-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="m9 12 2 2 4-4"></path>
+                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                    </svg>
+                                                </div>
+                                                <span>Launched 100+ successful digital products</span>
+                                            </li>
+                                            <li>
+                                                <div class="achievement-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="m9 12 2 2 4-4"></path>
+                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                    </svg>
+                                                </div>
+                                                <span>Achieved 98% client satisfaction rate</span>
+                                            </li>
+                                            <li>
+                                                <div class="achievement-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="m9 12 2 2 4-4"></path>
+                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                    </svg>
+                                                </div>
+                                                <span>Reduced development time by 30%</span>
+                                            </li>
+                                            <li>
+                                                <div class="achievement-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="m9 12 2 2 4-4"></path>
+                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                    </svg>
+                                                </div>
+                                                <span>Mentored junior designers and developers</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="skills">
+                                            <span class="skill-tag">Web Development</span>
+                                            <span class="skill-tag">UX Research</span>
+                                            <span class="skill-tag">Agile</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Helens Project-->
+                    <div class="experience-card" data-year="2018">
+                        <div class="experience-card-inner">
+                            <div class="card-year">
+                                <span>2018</span>
+                                <div class="year-connector"></div>
+                            </div>
+                            <div class="card-content">
+                                <div class="company-logo">
+                                    <div class="logo-placeholder">HP</div>
+                                </div>
+                                <div class="card-details">
+                                    <div class="card-header">
+                                        <h3 class="experience-role">Lead Graphic Designer</h3>
+                                        <div class="company-info">
+                                            <h4 class="company-name">Helens Project | USA-Remote</h4>
+                                            <span class="employment-duration">2018 - 2022</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Led the design team, delivering creative and effective branding and marketing
+                                            solutions that elevated brand visibility and market position:</p>
+                                        <ul class="achievements">
+                                            <li>
+                                                <div class="achievement-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="m9 12 2 2 4-4"></path>
+                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                    </svg>
+                                                </div>
+                                                <span>Designed intuitive user interfaces and interactions</span>
+                                            </li>
+                                            <li>
+                                                <div class="achievement-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="m9 12 2 2 4-4"></path>
+                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                    </svg>
+                                                </div>
+                                                <span>Developed visually appealing website, brochures, and marketing
+                                                    materials aligned with brand identity for recognition and
+                                                    consistency</span>
+                                            </li>
+                                            <li>
+                                                <div class="achievement-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="m9 12 2 2 4-4"></path>
+                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                    </svg>
+                                                </div>
+                                                <span>Reduced development time by 20%</span>
+                                            </li>
+                                            <li>
+                                                <div class="achievement-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="m9 12 2 2 4-4"></path>
+                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                    </svg>
+                                                </div>
+                                                <span>Mentored junior designers, fostering professional growth and
+                                                    elevating overall design quality</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="skills">
+                                            <span class="skill-tag">Web Development</span>
+                                            <span class="skill-tag">Brand Design</span>
+                                            <span class="skill-tag">Teamwork</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
                 </div>
-                <button type="submit" id="form-submit"
-                        class="w-full bg-gradient-to-r from-orange-400 to-orange-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-                    Send Message
-                </button>
-            </form>
+            </div>
         </div>
     </section>
 
-    </body>
-    
-
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-8 md:mb-0">
-                    <h3 class="text-2xl quattrocento-bold  mb-2">Available for Projects</h3>
-                    <a href="maito:info@claudius-mainja.com" target="_blank">
-                    <p  class="text-orange-400 work-sans-bold hover:text-gray-200">info@claudius-mainja.com</p>
-                </a>
-                </div>
-                <div class="flex space-x-6">
-                    <a href="https://github.com/ClaudiusMainja" target="_blank" class="hover:text-orange-400 transition-colors" aria-label="GitHub Profile">
-                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/claudius-mainja/" target="_blank" class= "text-white hover:text-orange-400 transition-colors" aria-label="LinkedIn Profile">
-                        <svg class="w-6 h-6 text-white dark:text-white dark:hover:text-orange-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd" d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z" clip-rule="evenodd"/>
-                            <path d="M7.2 8.809H4V19.5h3.2V8.809Z"/>
-                          </svg>
-                          
-                    </a>
-                    <a href="https://dribbble.com/ClaudiusMainja" target="_blank" class="hover:text-orange-400 transition-colors" aria-label="Dribble Profile">
-                        <svg class="w-6 h-6 text-white dark:text-white dark:hover:text-orange-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd" d="M12 2a10 10 0 1 0 10 10A10.009 10.009 0 0 0 12 2Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.093 20.093 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM10 3.707a8.82 8.82 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.755 45.755 0 0 0 10 3.707Zm-6.358 6.555a8.57 8.57 0 0 1 4.73-5.981 53.99 53.99 0 0 1 3.168 4.941 32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.641 31.641 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM12 20.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 15.113 13a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z" clip-rule="evenodd"/>
-                          </svg>
-                          
-                    </a>
-
-                    <a href="https://www.instagram.com/claudiusmainja/" target="_blank" class="hover:text-blue-400 transition-colors" aria-label="Instagram Profile">
-                        <svg class="w-6 h-6 text-white dark:text-white dark:hover:text-orange-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
-                          </svg>
-                          
-                    </a>
-
-                    <a href="https://www.behance.net/claudiusmainja" target="_blank" class="hover:text-blue-400 transition-colors" aria-label="Behance Profile">
-                        <svg class="w-6 h-6 text-white dark:text-white dark:hover:text-orange-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M13.2131 9.78732c-.6359-.63557-1.4983-.99259-2.3974-.99259-.89911 0-1.76143.35702-2.39741.99259l-3.4253 3.42528C4.35719 13.8485 4 14.7108 4 15.61c0 .8992.35719 1.7616.99299 2.3974.63598.6356 1.4983.9926 2.39742.9926.89912 0 1.76144-.357 2.39742-.9926l.32157-.3043m-.32157-4.4905c.63587.6358 1.49827.993 2.39747.993.8991 0 1.7615-.3572 2.3974-.993l3.4243-3.42528c.6358-.63585.993-1.49822.993-2.39741 0-.89919-.3572-1.76156-.993-2.39741C17.3712 4.357 16.509 4 15.6101 4c-.899 0-1.7612.357-2.397.9925l-1.0278.96062m7.3873 14.04678-1.7862-1.7862m0 0L16 16.4274m1.7864 1.7863 1.7862-1.7863m-1.7862 1.7863L16 20"/>
-                          </svg>
-                          
-                    </a>
-
-                </div>
+    <!-- what i do section-->
+    <section class="py-20 px-4 md:px-8 lg:px-16">
+        <div class="max-w-6xl mx-auto">
+            <div class="heading-container text-center mb-16">
+                <span class="section-badge font-regular rounded-lg">I believe in</span>
+                <div class="heading-accent"></div>
+                <h2 class="text-3xl md:text-5xl font-bold mb-2 inline-block">
+                    <span class="text-white">Elevating</span>
+                    <span class="heading-highlight">Products</span>
+                    <span class="heading-gradient">Through Design</span>
+                </h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">That's why i specialize in exceptional digital
+                    experiences that transform ideas into market-ready solutions.</p>
             </div>
-            <div class="text-center text-gray-400 quattrocento-regular">
-                <p>&copy; 2024 Claudius Mainja. All rights reserved.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                <!-- Brand Strategy Card -->
+                <div id="service1" class="service-card bg-black rounded-lg p-8 flex flex-col items-start">
+                    <div class="service-icon text-5xl mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title text-2xl font-semibold mb-3">Strategic Brand Development & Visual Identity
+                    </h3>
+                    <div class="service-underline mb-5"></div>
+                    <p class="text-gray-400 mb-5">I translate complex business visions into compelling brand narratives
+                        and market-leading visual identities. My approach is rooted in strategic positioning, ensuring
+                        your brand not only resonates with target audiences but also delivers measurable ROI. I craft
+                        memorable visual systems that elevate market presence and foster lasting brand loyalty.</p>
+                </div>
+
+                <!-- UI/UX Design Card -->
+                <div id="service2" class="service-card bg-black rounded-lg p-8 flex flex-col items-start">
+                    <div class="service-icon text-5xl mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M15 9h-6M15 12h-6" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title text-2xl font-semibold mb-3">User-Centric UI/UX Design</h3>
+                    <div class="service-underline mb-5"></div>
+                    <p class="text-gray-400 mb-5">I design intuitive, aesthetically refined user interfaces that
+                        prioritize seamless functionality and exceptional user experience. By balancing creativity with
+                        data-driven insights, I create digital experiences that significantly increase engagement,
+                        reduce friction, and drive tangible improvements in user satisfaction and conversion rates.</p>
+                </div>
+
+                <!-- Web Design Card -->
+                <div id="service3" class="service-card bg-black rounded-lg p-8 flex flex-col items-start">
+                    <div class="service-icon text-5xl mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title text-2xl font-semibold mb-3">Web Design & Development</h3>
+                    <div class="service-underline mb-5"></div>
+                    <p class="text-gray-400 mb-5">I architect conversion-focused digital experiences that seamlessly
+                        integrate aesthetic brilliance with technical precision. My expertise lies in delivering
+                        high-performance, responsive web solutions that consistently exceed client expectations and
+                        achieve critical business objectives. I focus on creating digital platforms that are both
+                        visually stunning and functionally superior.</p>
+                </div>
+
+                <!-- Digital Marketing Card -->
+                <div id="service4" class="service-card bg-black rounded-lg p-8 flex flex-col items-start">
+                    <div class="service-icon text-5xl mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title text-2xl font-semibold mb-3">Data-Driven Digital Marketing Strategies</h3>
+                    <div class="service-underline mb-5"></div>
+                    <p class="text-gray-400 mb-5">I orchestrate data-driven digital marketing campaigns that capture
+                        market attention and deliver quantifiable growth. My approach emphasizes strategic content
+                        development and targeted audience engagement tactics, transforming prospects into passionate
+                        brand advocates. I leverage analytics to continuously optimize campaigns and maximize ROI.</p>
+                </div>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- Scripts -->
-    <script>
-        // Loading Screen
-        window.addEventListener('load', () => {
-            const loader = document.getElementById('loader');
-            loader.style.opacity = '0';
-            loader.style.transition = 'opacity 0.5s ease-out';
-            setTimeout(() => {
-                loader.style.display = 'none';
-            }, 500);
-        });
+    <script src="/card.js"></script>
+    <script src="/experience.js"></script>
 
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        menuBtn.addEventListener('click', () => {
-            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-            menuBtn.setAttribute('aria-expanded', !isExpanded);
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Scroll Animation
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const fadeInOnScroll = () => {
-            fadeElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementBottom = element.getBoundingClientRect().bottom;
+        <!-- Contact Button -->
+        <div id="contact-button" class="fixed bottom-6 right-6 z-50">
+            <!-- Contact Options Modal -->
+            <div id="contact-options" class="hidden">
+                <!-- Modal Background -->
+                <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300"></div>
                 
-                if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
-                    element.classList.add('visible');
-                }
-            });
-        };
-
-        // Initial check for elements in view
-        fadeInOnScroll();
+                <!-- Modal Content -->
+                <div class="absolute bottom-20 right-0 w-72 bg-white rounded-xl shadow-2xl transform transition-all duration-300">
+                    <!-- Header -->
+                    <div class="p-6 border-b border-gray-100">
+                        <h3 class="text-xl font-semibold text-gray-800">Let's Chat! 👋</h3>
+                        <p class="text-sm text-gray-600 mt-2">Choose how you'd like to connect with me</p>
+                    </div>
+                    
+                    <!-- Contact Options -->
+                    <div class="p-4 space-y-3">
+                        <!-- Email Option -->
+                        <a href="mailto:info@claudius-mainja.com" target="_blank"
+                           class="flex items-center gap-4 p-3 rounded-lg hover:bg-purple-50 transition-all duration-300 group">
+                            <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Email</h4>
+                                <p class="text-sm text-gray-500">Chat via Email</p>
+                            </div>
+                            <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </a>
+    
+                        <!-- Phone Option -->
+                        <a href="tel:+27636717594"
+                           class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-50 transition-all duration-300 group">
+                            <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Phone Call</h4>
+                                <p class="text-sm text-gray-500">Direct voice support</p>
+                            </div>
+                            <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Main Toggle Button -->
+            <button id="toggle-contact" 
+                    class="group bg-gradient-to-r from-orange-500 to-orange-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-3">
+                <i class="fas fa-comments text-xl group-hover:rotate-12 transition-transform duration-300"></i>
+                <span class="text-sm font-medium mr-2">Let's Chat</span>
+            </button>
+        </div>
         
-        // Listen for scroll events
-        window.addEventListener('scroll', fadeInOnScroll);
+        <script src="/javascript/chat.js"></script>
 
-        // Header Scroll Effect
-        const header = document.getElementById('header');
-        let lastScroll = 0;
+</body>
 
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll <= 0) {
-                header.classList.remove('shadow-lg');
-                header.style.transform = 'translateY(0)';
-            } else if (currentScroll > lastScroll) {
-                // Scrolling down
-                header.style.transform = 'translateY(-100%)';
-            } else {
-                // Scrolling up
-                header.classList.add('shadow-lg');
-                header.style.transform = 'translateY(0)';
-            }
-            
-            lastScroll = currentScroll;
-        });
+<!-- Footer -->
+<footer class="bg-[#121212] text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <!-- Main Content -->
+        <div class="space-y-8 mb-12">
+            <!-- Logo/Brand Section -->
+            <div class="mb-4">
+                <!--      <img src="/assets/images/Branding-02.png" alt="logo" class="h-12 mx-auto mb-4">-->
+                <h3 class="text-3xl font-medium mb-4">Let's Create Something Together</h3>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto"></p>
+                I am available for new opportunities and exciting projects
+                </p>
+            </div>
 
-        // Form Submission
-        const applicationForm = document.getElementById('applicationForm');
-        
-        applicationForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(applicationForm);
-            const formObject = Object.fromEntries(formData);
-            
-            try {
-                // Replace with your actual form submission endpoint
-                const response = await fetch('https://submit-form.com/PTTuGlWSt', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formObject),
-                });
-                
-                if (response.ok) {
-                    alert('Message sent successfully!');
-                    applicationForm.reset();
-                } else {
-                    throw new Error('Failed to send message');
-                }
-            }
-            
-            catch (error) {
-                alert('There was an error sending your message. Please try again later.');
-                console.error('Error:', error);
-            }
-            
-        });
+            <!-- Contact Info -->
+            <div class="mb-4">
+                <a href="mailto:info@claudius-mainja.com"
+                    class="text-2xl text-orange-400 hover:text-orange-300 transition-colors">
+                    info@claudius-mainja.com
+                </a>
+            </div>
 
-        // Active Navigation Link Highlighting
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
+            <!-- Social Links -->
+            <div class="flex justify-center space-x-8">
+                <a href="https://github.com/ClaudiusMainja" target="_blank"
+                    class="text-white hover:text-orange-400 transform hover:scale-110 transition-all"
+                    aria-label="GitHub Profile">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/claudius-mainja/" target="_blank"
+                    class="text-gray-400 hover:text-orange-400 transform hover:scale-110 transition-all"
+                    aria-label="LinkedIn Profile">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://dribbble.com/ClaudiusMainja" target="_blank"
+                    class="text-gray-400 hover:text-orange-400 transform hover:scale-110 transition-all"
+                    aria-label="Dribbble Profile">
+                    <i class="fa-brands fa-dribbble"></i>
+                </a>
 
-        window.addEventListener('scroll', () => {
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (window.pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
+                <a href="https://www.instagram.com/claudiusmainja/" target="_blank"
+                    class="text-gray-400 hover:text-orange-400 transform hover:scale-110 transition-all"
+                    aria-label="Instagram Profile">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
 
-            navLinks.forEach(link => {
-                link.classList.remove('text-blue-600');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.classList.add('text-blue-600');
-                }
-            });
-        });
-    </script>
+                <a href="https://www.behance.net/claudiusmainja" target="_blank"
+                    class="text-gray-400 hover:text-orange-400 transform hover:scale-110 transition-all"
+                    aria-label="Behance Profile">
+                    <i class="fa-brands fa-behance"></i>
+            </div>
+        </div>
 
-    <!-- Deferred Loading for Performance -->
-    <script defer>
-        // Lazy load images
-        document.addEventListener('DOMContentLoaded', () => {
-            const images = document.querySelectorAll('img[data-src]');
-            
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.removeAttribute('data-src');
-                        observer.unobserve(img);
-                    }
-                });
-            });
-
-            images.forEach(img => imageObserver.observe(img));
-        });
-    </script>
-
+        <!-- Copyright -->
+        <div class="pt-8 border-t border-gray-800">
+            <p class="text-gray-400 text-sm">
+                &copy; 2024 Claudius Mainja. Crafted with passion in Cape Town.
+            </p>
+        </div>
+    </div>
+</footer>
+<script src="/main.js"></script>
 </html>

@@ -1,0 +1,106 @@
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+.project-card {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.image-container {
+    overflow: hidden;
+}
+
+.image-container img {
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .image-container img {
+    transform: scale(1.05);
+}
+
+.badge {
+    position: relative;
+    overflow: hidden;
+}
+
+.badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.project-card:hover .badge::after {
+    left: 100%;
+}
+
+.filter-btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.5s ease;
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #f97316;
+    z-index: -1;
+    transition: left 0.5s ease;
+}
+
+.filter-btn:hover::before {
+    left: 0;
+}
+
+.filter-btn:hover {
+    color: white;
+}
+
+.cursor-follower {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(249, 115, 22, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #f97316, #fb923c);
+    -webkit-background-clip: text;
+    color: transparent;
+}

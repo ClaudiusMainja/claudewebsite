@@ -1,32 +1,87 @@
+<!--
+Document: Portfolio.html
+Description: Portfolio page for Claudius Mainja's personal website
+Author: Claudius Mainja
+Version: 1.0
+
+Structure:
+1. Head Section:
+    - Meta tags for SEO and social media sharing
+    - External CSS and JavaScript dependencies
+    - Schema.org markup for Google
+    
+2. Header Section:
+    - Navigation menu with responsive design
+    - Desktop and mobile menu options
+    - Resume download button
+
+3. Body Content:
+    - Hero section with animated elements and statistics
+    - Projects section with filtering options
+    - Featured project showcase
+    - Project grid displaying various works
+    - Contact button with modal options
+
+4. Footer:
+    - Contact information
+    - Social media links
+    - Copyright notice
+
+Features:
+- Responsive design for all screen sizes
+- Custom cursor implementation
+- Animated section reveals
+- Project filtering system
+- Contact modal
+- Social media integration
+
+Dependencies:
+- Tailwind CSS
+- Font Awesome
+- GSAP (Animation)
+- jQuery
+- Custom CSS (main.css, portfolio.css)
+- Custom JS (scripts.js, chat.js, portfolio.js)
+
+Note: This template uses modern CSS features and JavaScript animations.
+Requires modern browser support for optimal viewing.
+-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Claudius Mainja - Product Designer & Web Developer with 10+ years of experience in brand design, strategy, and positioning. Based in Cape Town.">
+    <meta name="description"
+        content="Claudius Mainja - Product Designer & Web Developer with 10+ years of experience in brand design, strategy, and positioning. Based in Cape Town.">
     <meta name="keywords" content="product design, web development, UI/UX design, brand strategy, Cape Town designer">
     <meta name="author" content="Claudius Mainja">
-    
+
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Claudius Mainja - Product Designer & Web Developer">
-    <meta property="og:description" content="Portfolio of Claudius Mainja - Crafting digital experiences that combine aesthetic excellence with functional design">
+    <meta property="og:description"
+        content="Portfolio of Claudius Mainja - Crafting digital experiences that combine aesthetic excellence with functional design">
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/images/branding-01.png">
-    
-    <title>Claudius Mainja | Product Designer & Web Developer | Cape Town</title>
-    <link rel="icon" type="image/x-icon" href="/images/assets/favicon.png">
-    <link rel="stylesheet" href="/main.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
-    
+    <title>Claudius Mainja | Product Designer & Web Developer | Cape Town</title>
+    <link rel="icon" href="/icon.png" type="image/png" />
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/75ac30adf6.js" crossorigin="anonymous"></script>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    
+    <!-- Animation Libraries -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="/scripts.js"></script>
+    <link rel="stylesheet" href="/src/main.css">
+    <link rel="stylesheet" href="/src/portfolio.css">
+
     <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
     {
@@ -45,402 +100,434 @@
         "https://github.com/claudiusmainja",
       ]
     }
-
     </script>
-
 
 </head>
 
 
-    <!-- Header -->
-    <header id="header" class="fixed w-full z-40 transition-all duration-300 work-sans-medium ">
-        <nav class="bg-white bg-opacity-95 shadow-lg backdrop-blur-sm pt-8 pb-8 top-0">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-16">
-                    <a href="/index.html" class="flex items-center space-x-2">
-                        <img src="/assets/images/Branding-01.png" alt="logo" height="200px" width="200px" >
+<header id="header" class="fixed w-full z-40 transition-all duration-300 font-regular">
+    <nav class="bg-white bg-opacity-95 shadow-lg backdrop-blur-sm pt-6 pb-6 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="/index.html" class="flex items-center space-x-2 transition-transform duration-300 hover:scale-105">
+                    <img src="/assets/images/Branding-01.png" alt="logo" height="200px" width="200px">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="/index.html" class="nav-link relative text-gray-900 hover:text-orange-600 px-3 py-2 transition-all duration-300 group">
+                        <span>Home</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    
-                    <!-- Desktop Navigation -->
-                    <div class="hidden md:flex space-x-8">
-                        <a href="/index.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">Home</a>
-                        <a href="/pages/about.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">About</a>
-                        <a href="/pages/Portfolio.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">Portfolio</a>
-                        <a href="/pages/Contact.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">Contact</a>
-                        <a href="/assets/doc/Claudius Mainja Resume.docx" target="_blank" class="px-6 py-2 text-white bg-gradient-to-r from-orange-400 to-orange-600 rounded-lg hover:shadow-lg transition duration-300 transform hover:-translate-y-0.5">
-                            Resume
+                    <a href="/pages/about.html" class="nav-link relative text-gray-900 hover:text-orange-600 px-3 py-2 transition-all duration-300 group">
+                        <span>About</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="/pages/Portfolio.html" class="nav-link relative text-gray-900 hover:text-orange-600 px-3 py-2 transition-all duration-300 group">
+                        <span>Portfolio</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="/pages/Contact.html" class="nav-link relative text-gray-900 hover:text-orange-600 px-3 py-2 transition-all duration-300 group">
+                        <span>Contact</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="/assets/doc/Claudius Mainja Resume.docx" target="_blank"
+                        class="px-6 py-2 text-white bg-gradient-to-r from-orange-400 to-orange-600 rounded-full hover:shadow-xl transition duration-300 transform hover:-translate-y-1 hover:scale-105 flex items-center">
+                        <span>Resume</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden text-gray-900 focus:outline-none">
+                    <i class="fa-solid fa-bars w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="/index.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Home</a>
+                <a href="/pages/Portfolio.html"
+                    class="block px-3 py-2 text-gray-900 hover:text-orange-500">Portfolio</a>
+                <a href="/pages/about.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">About</a>
+                <a href="/pages/Contact.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Contact</a>
+            </div>
+        </div>
+    </nav>
+</header>   
+  
+<body class="bg-gray-50 text-neutral-800 dark:bg-[#121212] dark:text-white">
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+    
+    <!-- Hero Section -->
+    <section class="min-h-screen relative overflow-hidden bg-[#121212] py-20">
+        <div class="absolute top-0 left-0 w-full h-full">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#121212] via-[#1e1e1e] to-[#121212] opacity-90"></div>
+            <div class="grid grid-cols-8 grid-rows-8 h-full w-full absolute">
+                <div id="grid-item-1" class="rounded-full bg-orange-500/10 blur-3xl absolute -top-10 -left-10 w-96 h-96"></div>
+                <div id="grid-item-2" class="rounded-full bg-orange-600/10 blur-3xl absolute bottom-20 right-20 w-64 h-64"></div>
+            </div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10 pt-20 md:pt-32">
+            <div class="flex flex-col md:flex-row items-center mb-16">
+                <div class="w-full md:w-1/2 reveal">
+                    <span class="inline-block px-4 py-1 bg-orange-500/10 text-orange-500 rounded-full text-sm font-medium mb-6">Dreams and Realities</span>
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                        Time to <span class="gradient-text">Showcase</span> My Experience
+                    </h1>
+                    <p class="text-xl text-gray-400 mb-10 max-w-lg">
+                        with a collection of my best work in product design, brand identity, and web development.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#projects" class="px-8 py-4 bg-orange-500 text-white rounded-lg font-medium hover:bg-orange-600 transition-all shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40">
+                            Explore Projects
+                        </a>
+                        <a href="#contact" class="px-8 py-4 bg-white/5 backdrop-blur-lg text-white rounded-lg font-medium border border-white/10 hover:bg-white/10 transition-all">
+                            Let's Connect
                         </a>
                     </div>
-                    
-                    <!-- Mobile Menu Button -->
-                    <button id="menuBtn" class="md:hidden text-gray-900 focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
                 </div>
+                
+                <div class="w-full md:w-1/2 mt-12 md:mt-0 reveal">
+                    <div class="relative">
+                        <div class="floating flex justify-center">
+                            <div class="w-72 h-72 md:w-96 md:h-96 bg-[#1e1e1e] rounded-full relative flex items-center justify-center">
+                                <svg width="200" height="200" viewBox="0 0 100 100" class="absolute">
+                                    <defs>
+                                        <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
+                                    </defs>
+                                    <text>
+                                        <textPath xlink:href="#circle" class="text-xs text-white tracking-widest">
+                                            PRODUCT DESIGN • BRAND IDENTITY • WEB DEVELOPMENT •
+                                        </textPath>
+                                    </text>
+                                </svg>
+                                <div class="w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 blur-sm"></div>
+                                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+                                    <div class="text-3xl md:text-4xl font-bold">100+</div>
+                                    <div class="text-sm text-gray-300">Projects Completed</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-[#1e1e1e] rounded-lg flex items-center justify-center floating" style="animation-delay: 0.5s">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-orange-500">10+</div>
+                                <div class="text-xs text-gray-300">Years Experience</div>
+                            </div>
+                        </div>
+                        <div class="absolute -top-8 -left-4 w-24 h-24 bg-[#1e1e1e] rounded-lg flex items-center justify-center floating" style="animation-delay: 1s">
+                            <div class="text-center">
+                                <div class="text-xl font-bold text-orange-500">98%</div>
+                                <div class="text-xs text-gray-300">Client Satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="w-full overflow-hidden">
+            <div class="flex marquee">
+                <div class="flex shrink-0 gap-8 py-4 px-2 items-center animate-marquee">
+                    <span class="text-4xl font-bold text-neutral-800 dark:text-white opacity-5">Product Design</span>
+                    <span class="text-4xl font-bold text-neutral-800 dark:text-white opacity-5">UX/UI</span>
+                    <span class="text-4xl font-bold text-neutral-800 dark:text-white opacity-5">Brand Identity</span>
+                    <span class="text-4xl font-bold text-neutral-800 dark:text-white opacity-5">Web Development</span>
+                    <span class="text-4xl font-bold text-neutral-800 dark:text-white opacity-5">Product Design</span>
+                    <span class="text-4xl font-bold text-neutral-800 dark:text-white opacity-5">UX/UI</span>
+                    <span class="text-4xl font-bold text-neutral-800 dark:text-white opacity-5">Brand Identity</span>
+                    <span class="text-4xl font-bold text-neutral-800 dark:text-white opacity-5">Web Development</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-[#121212]">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-16 reveal">
+                <span class="inline-block px-4 py-1 bg-orange-500/10 text-orange-500 rounded-full text-sm font-medium mb-6">Portfolio</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Selected Projects</h2>
+                <p class="text-xl text-gray-400">
+                    A curated showcase of my most impactful work in.
+                </p>
             </div>
             
-            <!-- Mobile Navigation -->
-            <div id="mobileMenu" class="hidden md:hidden bg-white">
-                <div class="px-2 pt-2 pb-3 space-y-1">
-                    <a href="/index.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Home</a>
-                    <a href="/pages/Portfolio.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Portfolio</a>
-                    <a href="/pages/about.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">About</a>
-                    <a href="/pages/Contact.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Contact</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <body class=" work-sans-medium bg-white text-neutral-800 dark:bg-gray-950 dark:text-slate-100 text-xl">
-
-        
-            <!-- Portfolio Header -->
-            <section class="pt-32 pb-16 h-3/4 bg-gray-950">
-                <div class="container mx-auto mt-60 mb-24 px-6">
-                    <div class="max-w-4xl">
-                        <h1 class="text-4xl md:text-5xl text-orange-500 quattrocento-bold mb-6">
-                            Selected Projects
-                        </h1>
-                        <p class="text-xl text-white mb-8">
-                            A collection of my best work in product design, brand identity, and web development.
-                        </p>
-                    </div>
-                    <!-- Filter Categories -->
-                    <div class="flex flex-wrap gap-4 mb-12 text-sxl">
-                        <button class="px-6 py-2 bg-orange-500 text-white rounded-lg">My favourate Projects in:</button>
-                        <button class="px-6 py-2 bg-white text-slate-600 rounded-lg hover:bg-slate-100">Brand Identity</button>
-                        <button class="px-6 py-2 bg-white text-slate-600 rounded-lg hover:bg-slate-100">UIUX Design </button>
-                        <button class="px-6 py-2 bg-white text-slate-600 rounded-lg hover:bg-slate-100">Web Development</button>
-                    </div>
-                </div>
-            </section>
-        
-            <!-- Featured Project -->
-            <section class="py-16 bg-white">
-                <div class="container mx-auto px-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                        <div class="relative group">
-                            <img src="/assets/images/Nature Extant.png" loading="lazy" alt="Featured Project" class="w-full rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-105"/>
-                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                                <span class="text-sm font-medium text-slate-900">Featured Project</span>
-                            </div>
-                        </div>
-                        <div>
-                            <span class="text-orange-600 font-medium mb-2 block">Web Design & Development</span>
-                            <h2 class="text-3xl font-bold text-slate-900 mb-4">Educational website design and development</h2>
-                            <p class="text-slate-600 mb-6">
-                                A complete overhaul of an organizaional website focusing on improving user experience, 
-                                conversion rates, and mobile responsiveness. The project involved extensive user research,
-                                prototyping, and implementation of a new design system.
-                            </p>
-                            <div class="flex flex-wrap gap-3 mb-8">
-                                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm">React</span>
-                                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm">Next.js</span>
-                                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm">Tailwind CSS</span>
-                                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm">Figma</span>
-                            </div>
-                            <a href="https://natureextant.com/" target="_blank" class="inline-flex items-center text-orange-500 hover:text-gray-700">
-                                View Case Study
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        
-            <!-- Project Grid -->
-            <section class="py-16 bg-gray-800">
-                <div class="container mx-auto px-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <!--Impact 7 Brand Design -->
-                        <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                            <div class="relative">
-                                <img src="/assets/images/impact 7.jpg"  loading="lazy" alt="Impact7 Brand Design" class="w-full"/>
-                                <div class="absolute top-4 left-4">
-                                    <span class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-sm font-medium text-slate-900">
-                                        Brand Identity 
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold text-slate-900 mb-2">Startup Brand System</h3>
-                                <p class="text-slate-600 mb-4">Complete brand identity system for an Non-governmental organization, including logo design, 
-                                color palette, typography, and brand guidelines.</p>
-                                <div class="flex flex-wrap gap-2 mb-6">
-                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm">Branding</span>
-                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm">Identity</span>
-                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm">Guidelines</span>
-                                </div>
-                                <a href="https://www.behance.net/gallery/126757535/Impact-7-Brand-Strategy-Brand-Identity" target="_blank" class="text-orange-500 hover:text-gray-600 font-medium">View Project →</a>
-                            </div>
-                        </article>
-        
-                        <!-- ClassicReinsurance Web Development -->
-                        <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                            <div class="relative">
-                                <img src="/assets/images/theblproject.png" loading="lazy"  alt="Blacklemur Innovations" class="w-full"/>
-                                <div class="absolute top-4 left-4">
-                                    <span class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-sm font-medium text-slate-900">
-                                       UIUX Design and Web Development
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold text-slate-900 mb-2">Tech Company Website</h3>
-                                <p class="text-slate-600 mb-4">A modern website for a tech company, with an easy user journey for the clients  that they get the information about the website. Deliverables included User research, UI prototype and the final web design</p>
-                                <div class="flex flex-wrap gap-2 mb-6">
-                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm">Figma</span>
-                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm">Elementor</span>
-                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm">Wordpress</span>
-                                </div>
-                                <a href="https://www.figma.com/design/hBRpXI1YNBZUE8Z5ozAGFV/theblproject'?node-id=0-1&t=V4pXStegDTuKQWY6-1" target="_blank" class="text-orange-500 hover:text-gray-500 font-medium">View Project →</a>
-                            </div>
-                        </article>
-        
-                        <!-- Global Intercessors -->
-                        <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                            <div class="relative">
-                                <img src="/assets/images/global intercessors.png" loading="lazy" alt=" Global Intercessors" class="w-full"/>
-                                <div class="absolute top-4 left-4">
-                                    <span class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-sm font-medium text-slate-900">
-                                        UI/UX Design | Web Development
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold text-slate-900 mb-2">Website Revamp and Development</h3>
-                                <p class="text-slate-600 mb-4">User interface and experience design for a Global organization with focus on accessibility for the people who are not tech and the tech  clients.</p>
-                                <div class="flex flex-wrap gap-2 mb-6">
-                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm">UI Design</span>
-                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm">Mobile</span>
-                                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm">Prototyping</span>
-                                </div>
-                                <a href="https://www.figma.com/design/i2rWd8O3OK4yw6iJ1ElK0F/Global-Intercessors-Website?node-id=0-1&t=bpYmrXXCw49lZMBc-1" target="_blank" class="text-orange-500 hover:text-gray-700 font-medium">View Project →</a>
-                            </div>
-                        </article>
-                    </div>
-        
-                    <!-- Load More Button -->
-                    <div class="text-center mt-12">
-                        <button class="px-8 py-3  bg-gradient-to-r from-orange-400 to-orange-600 rounded-lg text-white hover:bg-white hover:text-gray-900 transition-colors"> <a href="/pages/More Projects.html" target="_parent" >
-                            Load More Projects
-                        </a></button>
-                    </div>
-                </div>
-            </section>
-            </body>
-
-             <!-- Footer -->
-   <!-- Footer -->
-   <footer class="bg-gray-900 text-white py-12">
-    <!-- Contact Section -->
-    <div class="bg-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-extrabold text-gray-900">Let's Work Together</h2>
-            <p class="mt-4 text-lg text-gray-500">
-                Interested in collaborating or learning more about my work?
-            </p>
-            <div class="mt-8">
-                <a href="mailto:info@claudius-mainja.com" target="_blank" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base  rounded-md text-white bg-orange-500 hover:bg-gray-900">
-            Email me: Let's Work!
-                </a>
+            <!-- Filter Categories -->
+            <div class="flex flex-wrap justify-center gap-4 mb-16 reveal">
+                <button class="filter-btn px-6 py-3 bg-orange-500 text-white rounded-lg font-medium">Product Design</button>
+                <button class="filter-btn px-6 py-3 bg-white/5 backdrop-blur-lg text-white rounded-lg font-medium border border-white/10">Brand Identity</button>
+                <button class="filter-btn px-6 py-3 bg-white/5 backdrop-blur-lg text-white rounded-lg font-medium border border-white/10">UX/UI Design</button>
+                <button class="filter-btn px-6 py-3 bg-white/5 backdrop-blur-lg text-white rounded-lg font-medium border border-white/10">Web Development</button>
             </div>
         </div>
-    </div>
-
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-8 md:mb-0">
-                    <h3 class="text-2xl quattrocento-bold  mt-4">Available for Projects</h3>
-                    <a href="maito:info@claudius-mainja.com" target="_blank">
-                    <p  class="text-orange-400 work-sans-bold hover:text-gray-200">info@claudius-mainja.com</p>
-                </a>
+        
+        <!-- Featured Project -->
+        <div class="container mx-auto px-6 mb-24">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center reveal">
+                <div class="md:col-span-7 relative group">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-orange-600 to-orange-400 rounded-2xl blur opacity-30 group-hover:opacity-80 transition duration-500"></div>
+                    <div class="relative image-container rounded-xl overflow-hidden">
+                        <img src="/assets/images/Nature Extant.png" alt="Featured Project" class="w-full rounded-xl transition-transform duration-700 group-hover:scale-105"/>
+                        <div class="absolute top-4 left-4 badge bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
+                            <span class="text-sm font-medium text-slate-900">My top Project</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex space-x-6">
-                    <a href="https://github.com/ClaudiusMainja" target="_blank" class="hover:text-orange-400 transition-colors" aria-label="GitHub Profile">
-                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/>
+                <div class="md:col-span-5">
+                    <span class="text-orange-500 font-medium mb-2 block">Web Design & Development</span>
+                    <h2 class="text-3xl font-bold text-white mb-4">Educational platform design and development</h2>
+                    <p class="text-gray-400 mb-6">
+                        A complete design and development of an educational platform that resulted in a 43% increase in user engagement and 
+                        28% improvement in conversion rates. The solution focused on intuitive navigation, responsive design, and 
+                        performance optimization.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-8">
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 rounded-lg text-sm">React</span>
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 rounded-lg text-sm">Next.js</span>
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 rounded-lg text-sm">Tailwind CSS</span>
+                        <span class="px-3 py-1 bg-white/5 text-gray-300 rounded-lg text-sm">Figma</span>
+                    </div>
+                    <a href="https://natureextant.com/" target="_blank" class="inline-flex items-center text-orange-500 hover:text-orange-400 font-medium group">
+                        View Final Project
+                        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
                     </a>
-                    <a href="https://www.linkedin.com/in/claudius-mainja/" target="_blank" class= "text-white hover:text-orange-400 transition-colors" aria-label="LinkedIn Profile">
-                        <svg class="w-6 h-6 text-white dark:text-white dark:hover:text-orange-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd" d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z" clip-rule="evenodd"/>
-                            <path d="M7.2 8.809H4V19.5h3.2V8.809Z"/>
-                          </svg>
-                          
-                    </a>
-                    <a href="https://dribbble.com/ClaudiusMainja" target="_blank" class="hover:text-orange-400 transition-colors" aria-label="Dribble Profile">
-                        <svg class="w-6 h-6 text-white dark:text-white dark:hover:text-orange-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd" d="M12 2a10 10 0 1 0 10 10A10.009 10.009 0 0 0 12 2Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.093 20.093 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM10 3.707a8.82 8.82 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.755 45.755 0 0 0 10 3.707Zm-6.358 6.555a8.57 8.57 0 0 1 4.73-5.981 53.99 53.99 0 0 1 3.168 4.941 32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.641 31.641 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM12 20.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 15.113 13a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z" clip-rule="evenodd"/>
-                          </svg>
-                          
-                    </a>
-
-                    <a href="https://www.instagram.com/claudiusmainja/" target="_blank" class="hover:text-blue-400 transition-colors" aria-label="Instagram Profile">
-                        <svg class="w-6 h-6 text-white dark:text-white dark:hover:text-orange-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
-                          </svg>
-                          
-                    </a>
-
-                    <a href="https://www.behance.net/claudiusmainja" target="_blank" class="hover:text-blue-400 transition-colors" aria-label="Behance Profile">
-                        <svg class="w-6 h-6 text-white dark:text-white dark:hover:text-orange-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M13.2131 9.78732c-.6359-.63557-1.4983-.99259-2.3974-.99259-.89911 0-1.76143.35702-2.39741.99259l-3.4253 3.42528C4.35719 13.8485 4 14.7108 4 15.61c0 .8992.35719 1.7616.99299 2.3974.63598.6356 1.4983.9926 2.39742.9926.89912 0 1.76144-.357 2.39742-.9926l.32157-.3043m-.32157-4.4905c.63587.6358 1.49827.993 2.39747.993.8991 0 1.7615-.3572 2.3974-.993l3.4243-3.42528c.6358-.63585.993-1.49822.993-2.39741 0-.89919-.3572-1.76156-.993-2.39741C17.3712 4.357 16.509 4 15.6101 4c-.899 0-1.7612.357-2.397.9925l-1.0278.96062m7.3873 14.04678-1.7862-1.7862m0 0L16 16.4274m1.7864 1.7863 1.7862-1.7863m-1.7862 1.7863L16 20"/>
-                          </svg>
-                          
-                    </a>
-
                 </div>
             </div>
-            <div class="text-center text-gray-400 quattrocento-regular">
-                <p>&copy; 2024 Claudius Mainja. All rights reserved.</p>
+        </div>
+        
+        <!-- Project Grid -->
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <article class="project-card bg-[#1a1a1a] rounded-xl overflow-hidden shadow-lg reveal">
+                    <div class="relative image-container">
+                        <img src="/assets/images/impact 7.jpg" alt="Impact7 Brand Design" class="w-full"/>
+                        <div class="absolute top-4 left-4 badge">
+                            <span class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-sm font-medium text-slate-900">
+                                Brand Identity 
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">NGO Brand Evolution</h3>
+                        <p class=" p text-orange-400 rounded-lg text-md">Impact 7</p>
+                        <p class="text-gray-400 mb-4">A strategic brand transformation for a non-profit organization that amplified their mission and increased donor engagement by 37% within three months of launch.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-white/5 text-gray-300 rounded-lg text-sm">Strategy</span>
+                            <span class="px-3 py-1 bg-white/5 text-gray-300 rounded-lg text-sm">Identity</span>
+                            <span class="px-3 py-1 bg-white/5 text-gray-300 rounded-lg text-sm">Guidelines</span>
+                        </div>
+                        <a href="https://www.behance.net/gallery/126757535/Impact-7-Brand-Strategy-Brand-Identity" target="_blank" class="text-orange-500 hover:text-orange-400 font-medium group inline-flex items-center">
+                            Explore Case Study
+                            <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+        
+                <!-- Project 2 -->
+                <article class="project-card bg-[#1a1a1a] rounded-xl overflow-hidden shadow-lg reveal" style="transition-delay: 0.2s">
+                    <div class="relative image-container">
+                        <img src="/assets/images/theblproject.png" alt="Tech Company Website" class="w-full"/>
+                        <div class="absolute top-4 left-4 badge">
+                            <span class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-sm font-medium text-slate-900">
+                               UX/UI Design
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Tech Startup Interface</h3>
+                        <p class=" p text-orange-400 rounded-lg text-md">Blacklemur Innovations</p>
+                        <p class="text-gray-400 mb-4">A user-centric digital experience for a tech innovator that reduced bounce rates by 42% and increased lead generation by 51%, creating a seamless path from interest to conversion.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-white/5 text-gray-300 rounded-lg text-sm">Figma</span>
+                            <span class="px-3 py-1 bg-white/5 text-gray-300 rounded-lg text-sm">Prototyping</span>
+                            <span class="px-3 py-1 bg-white/5 text-gray-300 rounded-lg text-sm">Usability</span>
+                        </div>
+                        <a href="https://www.figma.com/design/hBRpXI1YNBZUE8Z5ozAGFV/theblproject'?node-id=0-1&t=V4pXStegDTuKQWY6-1" target="_blank" class="text-orange-500 hover:text-orange-400 font-medium group inline-flex items-center">
+                            View Design Process
+                            <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+        
+                <!-- Project 3 -->
+                <article class="project-card bg-[#1a1a1a] rounded-xl overflow-hidden shadow-lg reveal" style="transition-delay: 0.4s">
+                    <div class="relative image-container">
+                        <img src="/assets/images/dstvsupreme.png" alt="Global Intercessors" class="w-full"/>
+                        <div class="absolute top-4 left-4 badge">
+                            <span class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-sm font-medium text-slate-900">
+                                Web Development
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Website Redesign</h3>
+                        <p class=" p text-orange-400 rounded-lg text-md">DSTV Supreme Signal</p>
+                        <p class="text-gray-400 mb-4">An accessibility-focused redesign for a global organization that bridged the technical divide between diverse user groups, resulting in a 67% increase in platform engagement.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-white/5 text-gray-300 rounded-lg text-sm">Accessibility</span>
+                            <span class="px-3 py-1 bg-white/5 text-gray-300 rounded-lg text-sm">Responsive</span>
+                            <span class="px-3 py-1 bg-white/5 text-gray-300 rounded-lg text-sm">Performance</span>
+                        </div>
+                        <a href="https://dstvsupremesignal.co.za/" target="_blank" class="text-orange-500 hover:text-orange-400 font-medium group inline-flex items-center">
+                            Explore Development
+                            <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        
+            <!-- Load More Button -->
+            <div class="text-center mt-16 reveal">
+                <a href="/pages/More Projects.html" class="inline-block px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg text-white font-medium hover:from-orange-600 hover:to-orange-700 transition-colors shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40 group">
+                    <span class="flex items-center">
+                        Discover More Projects
+                        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </span>
+                </a>
             </div>
         </div>
-    </footer>
+    </section>
 
-            <script>
-                // Loading Screen
-                window.addEventListener('load', () => {
-                    const loader = document.getElementById('loader');
-                    loader.style.opacity = '0';
-                    loader.style.transition = 'opacity 0.5s ease-out';
-                    setTimeout(() => {
-                        loader.style.display = 'none';
-                    }, 500);
-                });
-        
-                // Mobile Menu Toggle
-                const menuBtn = document.getElementById('menuBtn');
-                const mobileMenu = document.getElementById('mobileMenu');
-                
-                menuBtn.addEventListener('click', () => {
-                    const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-                    menuBtn.setAttribute('aria-expanded', !isExpanded);
-                    mobileMenu.classList.toggle('hidden');
-                });
-        
-                // Scroll Animation
-                const fadeElements = document.querySelectorAll('.fade-in');
-                
-                const fadeInOnScroll = () => {
-                    fadeElements.forEach(element => {
-                        const elementTop = element.getBoundingClientRect().top;
-                        const elementBottom = element.getBoundingClientRect().bottom;
-                        
-                        if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
-                            element.classList.add('visible');
-                        }
-                    });
-                };
-        
-                // Initial check for elements in view
-                fadeInOnScroll();
-                
-                // Listen for scroll events
-                window.addEventListener('scroll', fadeInOnScroll);
-        
-                // Header Scroll Effect
-                const header = document.getElementById('header');
-                let lastScroll = 0;
-        
-                window.addEventListener('scroll', () => {
-                    const currentScroll = window.pageYOffset;
-                    
-                    if (currentScroll <= 0) {
-                        header.classList.remove('shadow-lg');
-                        header.style.transform = 'translateY(0)';
-                    } else if (currentScroll > lastScroll) {
-                        // Scrolling down
-                        header.style.transform = 'translateY(-100%)';
-                    } else {
-                        // Scrolling up
-                        header.classList.add('shadow-lg');
-                        header.style.transform = 'translateY(0)';
-                    }
-                    
-                    lastScroll = currentScroll;
-                });
-        
-                // Form Submission
-                const contactForm = document.getElementById('contactForm');
-                
-                contactForm.addEventListener('submit', async (e) => {
-                    e.preventDefault();
-                    
-                    const formData = new FormData(contactForm);
-                    const formObject = Object.fromEntries(formData);
-                    
-                    try {
-                        // Replace with your actual form submission endpoint
-                        const response = await fetch('/api/contact', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify(formObject),
-                        });
-                        
-                        if (response.ok) {
-                            alert('Message sent successfully!');
-                            contactForm.reset();
-                        } else {
-                            throw new Error('Failed to send message');
-                        }
-                    } catch (error) {
-                        alert('There was an error sending your message. Please try again later.');
-                        console.error('Error:', error);
-                    }
-                });
-        
-                // Active Navigation Link Highlighting
-                const sections = document.querySelectorAll('section');
-                const navLinks = document.querySelectorAll('.nav-link');
-        
-                window.addEventListener('scroll', () => {
-                    let current = '';
-                    
-                    sections.forEach(section => {
-                        const sectionTop = section.offsetTop;
-                        const sectionHeight = section.clientHeight;
-                        
-                        if (window.pageYOffset >= sectionTop - 200) {
-                            current = section.getAttribute('id');
-                        }
-                    });
-        
-                    navLinks.forEach(link => {
-                        link.classList.remove('text-blue-600');
-                        if (link.getAttribute('href').slice(1) === current) {
-                            link.classList.add('text-blue-600');
-                        }
-                    });
-                });
-            </script>
-        
-            <!-- Deferred Loading for Performance -->
-            <script defer>
-                // Lazy load images
-                document.addEventListener('DOMContentLoaded', () => {
-                    const images = document.querySelectorAll('img[data-src]');
-                    
-                    const imageObserver = new IntersectionObserver((entries, observer) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                const img = entry.target;
-                                img.src = img.dataset.src;
-                                img.removeAttribute('data-src');
-                                observer.unobserve(img);
-                            }
-                        });
-                    });
-        
-                    images.forEach(img => imageObserver.observe(img));
-                });
-            </script>
 
+
+               <!-- Contact Button -->
+        <div id="contact-button" class="fixed bottom-6 right-6 z-50">
+            <!-- Contact Options Modal -->
+            <div id="contact-options" class="hidden">
+                <!-- Modal Background -->
+                <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300"></div>
+                
+                <!-- Modal Content -->
+                <div class="absolute bottom-20 right-0 w-72 bg-white rounded-xl shadow-2xl transform transition-all duration-300">
+                    <!-- Header -->
+                    <div class="p-6 border-b border-gray-100">
+                        <h3 class="text-xl font-semibold text-gray-800">Let's Chat! 👋</h3>
+                        <p class="text-sm text-gray-600 mt-2">Choose how you'd like to connect with me</p>
+                    </div>
+                    
+                    <!-- Contact Options -->
+                    <div class="p-4 space-y-3">
+                        <!-- Email Option -->
+                        <a href="mailto:info@claudius-mainja.com" target="_blank"
+                           class="flex items-center gap-4 p-3 rounded-lg hover:bg-purple-50 transition-all duration-300 group">
+                            <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Email</h4>
+                                <p class="text-sm text-gray-500">Chat via Email</p>
+                            </div>
+                            <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </a>
+    
+                        <!-- Phone Option -->
+                        <a href="tel:+27636717594"
+                           class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-50 transition-all duration-300 group">
+                            <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Phone Call</h4>
+                                <p class="text-sm text-gray-500">Direct voice support</p>
+                            </div>
+                            <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Main Toggle Button -->
+            <button id="toggle-contact" 
+                    class="group bg-gradient-to-r from-orange-500 to-orange-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-3">
+                <i class="fas fa-comments text-xl group-hover:rotate-12 transition-transform duration-300"></i>
+                <span class="text-sm font-medium mr-2">Let's Chat</span>
+            </button>
+        </div>
         
+        <script src="/javascript/chat.js"></script>
+
+</body>
+
+<!-- Footer -->
+<footer class="bg-[#121212] text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <!-- Main Content -->
+        <div class="space-y-8 mb-12">
+            <!-- Logo/Brand Section -->
+            <div class="mb-4">
+                <!--      <img src="/assets/images/Branding-02.png" alt="logo" class="h-12 mx-auto mb-4">-->
+                <h3 class="text-3xl font-medium mb-4">Let's Create Something Together</h3>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto"></p>
+                I am available for new opportunities and exciting projects
+                </p>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="mb-4">
+                <a href="mailto:info@claudius-mainja.com"
+                    class="text-2xl text-orange-400 hover:text-orange-300 transition-colors">
+                    info@claudius-mainja.com
+                </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex justify-center space-x-8">
+                <a href="https://github.com/ClaudiusMainja" target="_blank"
+                    class="text-white hover:text-orange-400 transform hover:scale-110 transition-all"
+                    aria-label="GitHub Profile">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/claudius-mainja/" target="_blank"
+                    class="text-gray-400 hover:text-orange-400 transform hover:scale-110 transition-all"
+                    aria-label="LinkedIn Profile">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://dribbble.com/ClaudiusMainja" target="_blank"
+                    class="text-gray-400 hover:text-orange-400 transform hover:scale-110 transition-all"
+                    aria-label="Dribbble Profile">
+                    <i class="fa-brands fa-dribbble"></i>
+                </a>
+
+                <a href="https://www.instagram.com/claudiusmainja/" target="_blank"
+                    class="text-gray-400 hover:text-orange-400 transform hover:scale-110 transition-all"
+                    aria-label="Instagram Profile">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.behance.net/claudiusmainja" target="_blank"
+                    class="text-gray-400 hover:text-orange-400 transform hover:scale-110 transition-all"
+                    aria-label="Behance Profile">
+                    <i class="fa-brands fa-behance"></i>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="pt-8 border-t border-gray-800">
+            <p class="text-gray-400 text-sm">
+                &copy; 2024 Claudius Mainja. Crafted with passion in Cape Town.
+            </p>
+        </div>
+    </div>
+</footer>
+<script src="/main.js"></script>
+<script src="/javascript/portfolio.js"></script>
 
     </html>

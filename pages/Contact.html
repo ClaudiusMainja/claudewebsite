@@ -1,31 +1,83 @@
+<!--
+This is a contact page for a personal portfolio website. Key components include:
+
+Head Section:
+- Meta tags for SEO and social media sharing
+- Required CSS and JavaScript dependencies
+- Schema.org markup for Google search optimization
+
+Header Section:
+- Fixed navigation bar with logo
+- Responsive desktop and mobile navigation menu
+- Resume download button
+
+Main Content:
+- Contact information section with:
+    - Phone number link
+    - Email address link
+    - Social media links (LinkedIn, GitHub, Twitter)
+- Copyright notice
+
+Contact Button Feature:
+- Fixed floating chat button
+- Modal with contact options (email and phone)
+- Animated transitions and hover effects
+
+Footer Section:
+- Call to action for collaboration
+- Contact email
+- Social media links
+- Copyright information
+
+Dependencies:
+- Tailwind CSS for styling
+- Font Awesome for icons
+- GSAP for animations
+- jQuery
+- Custom CSS and JavaScript files
+
+Design Features:
+- Responsive layout
+- Dark mode support
+- Animated hover effects
+- Mobile-friendly navigation
+- Accessible design elements
+-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Claudius Mainja - Product Designer & Web Developer with 10+ years of experience in brand design, strategy, and positioning. Based in Cape Town.">
+    <meta name="description"
+        content="Claudius Mainja - Product Designer & Web Developer with 10+ years of experience in brand design, strategy, and positioning. Based in Cape Town.">
     <meta name="keywords" content="product design, web development, UI/UX design, brand strategy, Cape Town designer">
     <meta name="author" content="Claudius Mainja">
-    
+
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Claudius Mainja - Product Designer & Web Developer">
-    <meta property="og:description" content="Portfolio of Claudius Mainja - Crafting digital experiences that combine aesthetic excellence with functional design">
+    <meta property="og:description"
+        content="Portfolio of Claudius Mainja - Crafting digital experiences that combine aesthetic excellence with functional design">
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/images/branding-01.png">
-    
+
     <title>Claudius Mainja | Product Designer & Web Developer | Cape Town</title>
-    <link rel="icon" type="image/x-icon" href="/images/assets/favicon.png">
-    <link rel="stylesheet" href="/main.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    
+    <link rel="icon" href="/icon.png" type="image/png" />
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/75ac30adf6.js" crossorigin="anonymous"></script>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="/scripts.js"></script>
+    <link rel="stylesheet" href="/src/main.css">
+    <link rel="stylesheet" href="/src/experience.css">
 
-    
     <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
     {
@@ -46,51 +98,65 @@
     }
     </script>
 
-    <!-- Custom Styles -->
-
 </head>
 
 
-    <!-- Header -->
-    <header id="header" class="fixed w-full z-40 transition-all duration-300 work-sans-medium ">
-        <nav class="bg-white bg-opacity-95 shadow-lg backdrop-blur-sm pt-8 pb-8 top-0">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-16">
-                    <a href="#home" class="flex items-center space-x-2">
-                        <img src="/assets/images/Branding-01.png" alt="logo" height="200px" width="200px" >
+<header id="header" class="fixed w-full z-40 transition-all duration-300 font-regular">
+    <nav class="bg-white bg-opacity-95 shadow-lg backdrop-blur-sm pt-6 pb-6 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="/index.html" class="flex items-center space-x-2 transition-transform duration-300 hover:scale-105">
+                    <img src="/assets/images/Branding-01.png" alt="logo" height="200px" width="200px">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="/index.html" class="nav-link relative text-gray-900 hover:text-orange-600 px-3 py-2 transition-all duration-300 group">
+                        <span>Home</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    
-                    <!-- Desktop Navigation -->
-                    <div class="hidden md:flex space-x-8">
-                        <a href="/index.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">Home</a>
-                        <a href="/pages/about.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">About</a>
-                        <a href="/pages/Portfolio.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">Portfolio</a>
-                        <a href="/pages/Contact.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">Contact</a>
-                        <a href="/assets/doc/Claudius Mainja Resume.docx" target="_blank" class="px-6 py-2 text-white bg-gradient-to-r from-orange-400 to-orange-600 rounded-lg hover:shadow-lg transition duration-300 transform hover:-translate-y-0.5">
-                            Resume
-                        </a>
-                    </div>
-                    
-                    <!-- Mobile Menu Button -->
-                    <button id="menuBtn" class="md:hidden text-gray-900 focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    <a href="/pages/about.html" class="nav-link relative text-gray-900 hover:text-orange-600 px-3 py-2 transition-all duration-300 group">
+                        <span>About</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="/pages/Portfolio.html" class="nav-link relative text-gray-900 hover:text-orange-600 px-3 py-2 transition-all duration-300 group">
+                        <span>Portfolio</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="/pages/Contact.html" class="nav-link relative text-gray-900 hover:text-orange-600 px-3 py-2 transition-all duration-300 group">
+                        <span>Contact</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="/assets/doc/Claudius Mainja Resume.docx" target="_blank"
+                        class="px-6 py-2 text-white bg-gradient-to-r from-orange-400 to-orange-600 rounded-full hover:shadow-xl transition duration-300 transform hover:-translate-y-1 hover:scale-105 flex items-center">
+                        <span>Resume</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                         </svg>
-                    </button>
+                    </a>
                 </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden text-gray-900 focus:outline-none">
+                    <i class="fa-solid fa-bars w-7 h-7"></i>
+                </button>
             </div>
-            
-            <!-- Mobile Navigation -->
-            <div id="mobileMenu" class="hidden md:hidden bg-white">
-                <div class="px-2 pt-2 pb-3 space-y-1">
-                    <a href="/index.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Home</a>
-                    <a href="/pages/Portfolio.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Portfolio</a>
-                    <a href="/pages/about.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">About</a>
-                    <a href="/pages/Contact.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Contact</a>
-                </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="/index.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Home</a>
+                <a href="/pages/Portfolio.html"
+                    class="block px-3 py-2 text-gray-900 hover:text-orange-500">Portfolio</a>
+                <a href="/pages/about.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">About</a>
+                <a href="/pages/Contact.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Contact</a>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>   
+  
+
     <body class=" work-sans-medium bg-white text-neutral-800 dark:bg-gray-950 dark:text-white text-xl">
 
         <div class="min-h-screen flex items-center justify-center p-4">
@@ -184,149 +250,124 @@
 
 
 
+               <!-- Contact Button -->
+               <div id="contact-button" class="fixed bottom-6 right-6 z-50">
+                <!-- Contact Options Modal -->
+                <div id="contact-options" class="hidden">
+                    <!-- Modal Background -->
+                    <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300"></div>
+                    
+                    <!-- Modal Content -->
+                    <div class="absolute bottom-20 right-0 w-72 bg-white rounded-xl shadow-2xl transform transition-all duration-300">
+                        <!-- Header -->
+                        <div class="p-6 border-b border-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-800">Let's Chat! 👋</h3>
+                            <p class="text-sm text-gray-600 mt-2">Choose how you'd like to connect with me</p>
+                        </div>
+                        
+                        <!-- Contact Options -->
+                        <div class="p-4 space-y-3">
+                            <!-- Email Option -->
+                            <a href="mailto:info@claudius-mainja.com" target="_blank"
+                               class="flex items-center gap-4 p-3 rounded-lg hover:bg-purple-50 transition-all duration-300 group">
+                                <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Email</h4>
+                                    <p class="text-sm text-gray-500">Chat via Email</p>
+                                </div>
+                                <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:translate-x-1 transition-transform duration-300"></i>
+                            </a>
+        
+                            <!-- Phone Option -->
+                            <a href="tel:+27636717594"
+                               class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-50 transition-all duration-300 group">
+                                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-phone text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Phone Call</h4>
+                                    <p class="text-sm text-gray-500">Direct voice support</p>
+                                </div>
+                                <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:translate-x-1 transition-transform duration-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Main Toggle Button -->
+                <button id="toggle-contact" 
+                        class="group bg-gradient-to-r from-orange-500 to-orange-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-3">
+                    <i class="fas fa-comments text-xl group-hover:rotate-12 transition-transform duration-300"></i>
+                    <span class="text-sm font-medium mr-2">Let's Chat</span>
+                </button>
+            </div>
+            
+            <script src="/javascript/chat.js"></script>
+    
     </body>
-    <footer>
-
-
+    
+    <!-- Footer -->
+    <footer class="bg-[#121212] text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <!-- Main Content -->
+            <div class="space-y-8 mb-12">
+                <!-- Logo/Brand Section -->
+                <div class="mb-4">
+                    <!--      <img src="/assets/images/Branding-02.png" alt="logo" class="h-12 mx-auto mb-4">-->
+                    <h3 class="text-3xl font-medium mb-4">Let's Create Something Together</h3>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto"></p>
+                    I am available for new opportunities and exciting projects
+                    </p>
+                </div>
+    
+                <!-- Contact Info -->
+                <div class="mb-4">
+                    <a href="mailto:info@claudius-mainja.com"
+                        class="text-2xl text-orange-400 hover:text-orange-300 transition-colors">
+                        info@claudius-mainja.com
+                    </a>
+                </div>
+    
+                <!-- Social Links -->
+                <div class="flex justify-center space-x-8">
+                    <a href="https://github.com/ClaudiusMainja" target="_blank"
+                        class="text-white hover:text-orange-400 transform hover:scale-110 transition-all"
+                        aria-label="GitHub Profile">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/claudius-mainja/" target="_blank"
+                        class="text-gray-400 hover:text-orange-400 transform hover:scale-110 transition-all"
+                        aria-label="LinkedIn Profile">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://dribbble.com/ClaudiusMainja" target="_blank"
+                        class="text-gray-400 hover:text-orange-400 transform hover:scale-110 transition-all"
+                        aria-label="Dribbble Profile">
+                        <i class="fa-brands fa-dribbble"></i>
+                    </a>
+    
+                    <a href="https://www.instagram.com/claudiusmainja/" target="_blank"
+                        class="text-gray-400 hover:text-orange-400 transform hover:scale-110 transition-all"
+                        aria-label="Instagram Profile">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+    
+                    <a href="https://www.behance.net/claudiusmainja" target="_blank"
+                        class="text-gray-400 hover:text-orange-400 transform hover:scale-110 transition-all"
+                        aria-label="Behance Profile">
+                        <i class="fa-brands fa-behance"></i>
+                </div>
+            </div>
+    
+            <!-- Copyright -->
+            <div class="pt-8 border-t border-gray-800">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2024 Claudius Mainja. Crafted with passion in Cape Town.
+                </p>
+            </div>
+        </div>
     </footer>
-     <!-- Scripts -->
-     <script>
-        // Loading Screen
-        window.addEventListener('load', () => {
-            const loader = document.getElementById('loader');
-            loader.style.opacity = '0';
-            loader.style.transition = 'opacity 0.5s ease-out';
-            setTimeout(() => {
-                loader.style.display = 'none';
-            }, 500);
-        });
-
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        menuBtn.addEventListener('click', () => {
-            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-            menuBtn.setAttribute('aria-expanded', !isExpanded);
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Scroll Animation
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const fadeInOnScroll = () => {
-            fadeElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementBottom = element.getBoundingClientRect().bottom;
-                
-                if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
-                    element.classList.add('visible');
-                }
-            });
-        };
-
-        // Initial check for elements in view
-        fadeInOnScroll();
-        
-        // Listen for scroll events
-        window.addEventListener('scroll', fadeInOnScroll);
-
-        // Header Scroll Effect
-        const header = document.getElementById('header');
-        let lastScroll = 0;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll <= 0) {
-                header.classList.remove('shadow-lg');
-                header.style.transform = 'translateY(0)';
-            } else if (currentScroll > lastScroll) {
-                // Scrolling down
-                header.style.transform = 'translateY(-100%)';
-            } else {
-                // Scrolling up
-                header.classList.add('shadow-lg');
-                header.style.transform = 'translateY(0)';
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Form Submission
-        const contactForm = document.getElementById('contactForm');
-        
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(contactForm);
-            const formObject = Object.fromEntries(formData);
-            
-            try {
-                // Replace with your actual form submission endpoint
-                const response = await fetch('/api/contact', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formObject),
-                });
-                
-                if (response.ok) {
-                    alert('Message sent successfully!');
-                    contactForm.reset();
-                } else {
-                    throw new Error('Failed to send message');
-                }
-            } catch (error) {
-                alert('There was an error sending your message. Please try again later.');
-                console.error('Error:', error);
-            }
-        });
-
-        // Active Navigation Link Highlighting
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (window.pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('text-blue-600');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.classList.add('text-blue-600');
-                }
-            });
-        });
-    </script>
-
-    <!-- Deferred Loading for Performance -->
-    <script defer>
-        // Lazy load images
-        document.addEventListener('DOMContentLoaded', () => {
-            const images = document.querySelectorAll('img[data-src]');
-            
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.removeAttribute('data-src');
-                        observer.unobserve(img);
-                    }
-                });
-            });
-
-            images.forEach(img => imageObserver.observe(img));
-        });
-    </script>
+    <script src="/main.js"></script>
     </html>

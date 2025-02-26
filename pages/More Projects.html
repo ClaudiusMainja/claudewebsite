@@ -1,31 +1,77 @@
+<!--
+/**
+ * Portfolio Website - More Projects Page
+ * 
+ * This is a responsive portfolio website page showcasing various projects and work examples.
+ * The page includes:
+ * 
+ * Structure:
+ * - Semantic HTML5 markup
+ * - Meta tags for SEO and social media sharing
+ * - Schema.org structured data for better search engine understanding
+ * 
+ * Components:
+ * - Fixed header with responsive navigation
+ * - Hero section with animated elements and statistics
+ * - Portfolio grid with project cards
+ * - Fullscreen preview functionality
+ * - Contact button with modal options
+ * - Footer with social links
+ * 
+ * Features:
+ * - Mobile-first responsive design
+ * - Custom cursor implementation
+ * - GSAP animations and scroll triggers
+ * - Tailwind CSS for styling
+ * - Image lazy loading
+ * - Hover effects and transitions
+ * 
+ * Dependencies:
+ * - Tailwind CSS
+ * - Font Awesome icons
+ * - GSAP animation library
+ * - jQuery
+ * 
+ * @author Claudius Mainja
+ * @version 1.0
+ * @lastModified 2024
+ */
+-->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Claudius Mainja - Product Designer & Web Developer with 10+ years of experience in brand design, strategy, and positioning. Based in Cape Town.">
+    <meta name="description"
+        content="Claudius Mainja - Product Designer & Web Developer with 10+ years of experience in brand design, strategy, and positioning. Based in Cape Town.">
     <meta name="keywords" content="product design, web development, UI/UX design, brand strategy, Cape Town designer">
     <meta name="author" content="Claudius Mainja">
-    
+
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Claudius Mainja - Product Designer & Web Developer">
-    <meta property="og:description" content="Portfolio of Claudius Mainja - Crafting digital experiences that combine aesthetic excellence with functional design">
+    <meta property="og:description"
+        content="Portfolio of Claudius Mainja - Crafting digital experiences that combine aesthetic excellence with functional design">
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/images/branding-01.png">
-    
+
     <title>Claudius Mainja | Product Designer & Web Developer | Cape Town</title>
-    <link rel="icon" type="image/x-icon" href="/images/assets/favicon.png">
-    <link rel="stylesheet" href="/main.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    
+    <link rel="icon" href="/icon.png" type="image/png" />
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/75ac30adf6.js" crossorigin="anonymous"></script>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Animation Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="/scripts.js"></script>
+    <link rel="stylesheet" href="/src/main.css">
+    <link rel="stylesheet" href="/src/project.css">
+
     <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
     {
@@ -44,422 +90,503 @@
         "https://github.com/claudiusmainja",
       ]
     }
-
     </script>
-
 
 </head>
 
 
-    <!-- Header -->
-    <header id="header" class="fixed w-full z-40 transition-all duration-300 work-sans-medium ">
-        <nav class="bg-white bg-opacity-95 shadow-lg backdrop-blur-sm pt-8 pb-8 top-0">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-16">
-                    <a href="/index.html" class="flex items-center space-x-2">
-                        <img src="/assets/images/Branding-01.png" alt="logo" height="200px" width="200px" >
-                    </a>
-                    
-                    <!-- Desktop Navigation -->
-                    <div class="hidden md:flex space-x-8">
-                        <a href="/index.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">Home</a>
-                        <a href="/pages/about.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">About</a>
-                        <a href="/pages/Portfolio.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">Portfolio</a>
-                        <a href="/pages/Contact.html" class="nav-link text-gray-900 hover:text-orange-600 px-3 py-2">Contact</a>
-                        <a href="/assets/doc/Claudius Mainja Resume.docx" target="_blank" class="px-6 py-2 text-white bg-gradient-to-r from-orange-400 to-orange-600 rounded-full hover:shadow-lg transition duration-300 transform hover:-translate-y-0.5">
-                            Resume
-                        </a>
-                    </div>
-                    
-                    <!-- Mobile Menu Button -->
-                    <button id="menuBtn" class="md:hidden text-gray-900 focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Mobile Navigation -->
-            <div id="mobileMenu" class="hidden md:hidden bg-white">
-                <div class="px-2 pt-2 pb-3 space-y-1">
-                    <a href="/index.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Home</a>
-                    <a href="/pages/Portfolio.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Portfolio</a>
-                    <a href="/pages/about.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">About</a>
-                    <a href="/pages/Contact.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Contact</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+<header id="header" class="fixed w-full z-40 transition-all duration-300 font-regular">
+    <nav class="bg-white bg-opacity-95 shadow-lg backdrop-blur-sm pt-6 pb-6 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="/index.html" class="flex items-center space-x-2 transition-transform duration-300 hover:scale-105">
+                    <img src="/assets/images/Branding-01.png" alt="logo" height="200px" width="200px">
+                </a>
 
-    <body class="bg-slate-200 text-gray-800 dark:bg-gradient-to-tr from-gray-800 to-gray-950 dark:text:white work-sans-medium text-xl">
-    
-        <style>
-            /* Custom Animations */
-            @keyframes fadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-            @keyframes slideUp {
-                from { transform: translateY(20px); opacity: 0; }
-                to { transform: translateY(0); opacity: 1; }
-            }
-            .fade-in { animation: fadeIn 0.8s ease forwards; }
-            .slide-up { animation: slideUp 0.8s ease-out forwards; }
-            .scale-hover:hover { transform: scale(1.05); }
-        </style>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="/index.html" class="nav-link relative text-gray-900 hover:text-orange-600 px-3 py-2 transition-all duration-300 group">
+                        <span>Home</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="/pages/about.html" class="nav-link relative text-gray-900 hover:text-orange-600 px-3 py-2 transition-all duration-300 group">
+                        <span>About</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="/pages/Portfolio.html" class="nav-link relative text-gray-900 hover:text-orange-600 px-3 py-2 transition-all duration-300 group">
+                        <span>Portfolio</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="/pages/Contact.html" class="nav-link relative text-gray-900 hover:text-orange-600 px-3 py-2 transition-all duration-300 group">
+                        <span>Contact</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="/assets/doc/Claudius Mainja Resume.docx" target="_blank"
+                        class="px-6 py-2 text-white bg-gradient-to-r from-orange-400 to-orange-600 rounded-full hover:shadow-xl transition duration-300 transform hover:-translate-y-1 hover:scale-105 flex items-center">
+                        <span>Resume</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden text-gray-900 focus:outline-none">
+                    <i class="fa-solid fa-bars w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="/index.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Home</a>
+                <a href="/pages/Portfolio.html"
+                    class="block px-3 py-2 text-gray-900 hover:text-orange-500">Portfolio</a>
+                <a href="/pages/about.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">About</a>
+                <a href="/pages/Contact.html" class="block px-3 py-2 text-gray-900 hover:text-orange-500">Contact</a>
+            </div>
+        </div>
+    </nav>
+</header>  
+  
+<body>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+
     
     <!-- Hero Section -->
-    <section class="relative bg-cover bg-center h-1/2" style="background-image: url('/assets/images/Home\ hero.png');">
-        <div class="absolute inset-0 bg-gradient-to-b from-indigo-800 to-transparent opacity-70"></div>
-        <div class="relative flex items-center justify-center h-full text-center text-white fade-in">
-            <div class="space-y-6 slide-up">
-                <h1 class="text-4xl md:text-5xl montserrat-alternates-bold ">My Portfolio</h1>
-                <p class="text-lg md:text-2xl">Showcasing the creativity that powers me as a product and brand designer/web developer</p>
+    <section class="min-h-screen relative overflow-hidden bg-[#121212] py-20">
+        <div class="absolute top-0 left-0 w-full h-full">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#121212] via-[#1e1e1e] to-[#121212] opacity-90"></div>
+            <div class="grid grid-cols-8 grid-rows-8 h-full w-full absolute">
+                <div id="grid-item-1" class="rounded-full bg-orange-500/10 blur-3xl absolute -top-10 -left-10 w-96 h-96"></div>
+                <div id="grid-item-2" class="rounded-full bg-orange-600/10 blur-3xl absolute bottom-20 right-20 w-64 h-64"></div>
             </div>
         </div>
+        
+        <div class="container mx-auto px-6 relative z-10 pt-20 md:pt-32">
+            <div class="flex flex-col md:flex-row items-center mb-16">
+                <div class="w-full md:w-1/2 reveal">
+                    <span class="inline-block px-4 py-1 bg-orange-500/10 text-orange-500 rounded-full text-sm font-medium mb-6">Dreams and Realities</span>
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
+                        Time to <span class="text-orange-500">Showcase</span> My Experience
+                    </h1>
+                    <p class="text-xl text-gray-400 mb-10 max-w-lg">
+                        with a collection of my best work in product design, brand identity, and web development.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#projects" class="px-8 py-4 bg-orange-500 text-white rounded-lg font-medium hover:bg-orange-600 transition-all shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40">
+                            Explore Projects
+                        </a>
+                        <a href="#contact" class="px-8 py-4 bg-white/5 backdrop-blur-lg text-white rounded-lg font-medium border border-white/10 hover:bg-white/10 transition-all">
+                            Let's Connect
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-1/2 mt-12 md:mt-0 reveal">
+                    <div class="relative">
+                        <div class="floating flex justify-center">
+                            <div class="w-72 h-72 md:w-96 md:h-96 bg-[#1e1e1e] rounded-full relative flex items-center justify-center">
+                                <svg width="200" height="200" viewBox="0 0 100 100" class="absolute">
+                                    <defs>
+                                        <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
+                                    </defs>
+                                    <text>
+                                        <textPath xlink:href="#circle" class="text-xs text-white tracking-widest">
+                                            PRODUCT DESIGN • BRAND IDENTITY • WEB DEVELOPMENT •
+                                        </textPath>
+                                    </text>
+                                </svg>
+                                <div class="w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 blur-sm"></div>
+                                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+                                    <div class="text-3xl md:text-4xl font-bold">100+</div>
+                                    <div class="text-sm text-gray-300">Projects Completed</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-[#1e1e1e] rounded-lg flex items-center justify-center floating" style="animation-delay: 0.5s">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-orange-500">10+</div>
+                                <div class="text-xs text-gray-300">Years Experience</div>
+                            </div>
+                        </div>
+                        <div class="absolute -top-8 -left-4 w-24 h-24 bg-[#1e1e1e] rounded-lg flex items-center justify-center floating" style="animation-delay: 1s">
+                            <div class="text-center">
+                                <div class="text-xl font-bold text-orange-500">98%</div>
+                                <div class="text-xs text-gray-300">Client Satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
     </section>
+
+          <!-- Fullscreen preview container -->
+  <div class="fullscreen-preview" id="fullscreenPreview">
+    <div class="close-preview" id="closePreview">×</div>
+    <img src="" alt="Project Preview" id="previewImage">
+  </div>
     
     <!-- Portfolio Section -->
-    <section class="py-16 ">
-        <div class="max-w-6xl mx-auto px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl quattrocento-bold  text-orange-500 text-center mb-12 fade-in">Completed Project</h2>
+  <section class="portfolio-section">
+    <div class="container">
+      <h2 class="section-title fade-in uppercase">Completed Projects</h2>
+      
+      <!-- Web Design Section -->
+      <div class="category-section" id="webDesignSection">
+        <h3 class="category-title">Web Design Projects</h3>
+        <div class="projects-grid">
+          
+          <!-- 7 arts theatre avondale website -->
+          <div class="project-card">
+            <div class="project-img-container">
+              <img src="/assets/images/websites/7 arts Theatre.png" alt="7 Arts Theatre Avondale" class="project-img">
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">7 Arts Theatre Avondale</h4>
+              <p class="project-description">Designed and developed a sophisticated responsive website that elevates the 7 Arts Theatre brand across all digital platforms, enhancing user engagement and event promotion effectiveness.</p>
+              <a href="https://7artstheatre.com/" target="_blank" class="project-link">
+                View Project
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
     
-            <!-- Web Design Section -->
-            <div class="mb-12">
-                <h3 class="text-2xl quattrocento-bold text-gray-800 dark:text-white mb-6">Web Design Projects</h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Takadah UK -->
+          <div class="project-card">
+            <div class="project-img-container">
+              <img src="/assets/images/websites/takadah.png" alt="Takadah UK" class="project-img">
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">Takadah</h4>
+              <p class="project-description">Engineered a conversion-focused e-commerce platform with optimized user journeys, strategic product displays, and streamlined checkout processes that significantly increased sales metrics and customer retention.</p>
+              <a href="https://takadah.co.uk/" target="_blank" class="project-link">
+                View Project
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+    
+          <!-- Classic Reinsurance Brokers-->
+          <div class="project-card">
+            <div class="project-img-container">
+              <img src="/assets/images/websites/classicre.png" alt="Classic Reinsurance Brokers" class="project-img">
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">Classic Reinsurance Brokers</h4>
+              <p class="project-description">Delivered a premium corporate website with sophisticated UI/UX design principles that establishes credibility in the financial sector while providing seamless information architecture for client acquisition.</p>
+              <a href="https://classicre.co.zw/" target="_blank" class="project-link">
+                View Project
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+    
+          <!-- Nature Extant Website -->
+          <div class="project-card">
+            <div class="project-img-container">
+              <img src="/assets/images/websites/Nature Extant.png" alt="Nature Extant Learning Center" class="project-img">
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">Nature Extant Learning Center</h4>
+              <p class="project-description">Created an accessible e-learning platform with comprehensive course management capabilities, interactive content delivery, and adaptive theme switching to enhance user experience across diverse learning environments.</p>
+              <a href="https://natureextant.com/" target="_blank" class="project-link">
+                View Project
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+    
+          <!-- Giant Petroleum Website-->
+          <div class="project-card">
+            <div class="project-img-container">
+              <img src="/assets/images/websites/GPG.png" alt="Giant Petroleum Group" class="project-img">
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">Giant Petroleum Group</h4>
+              <p class="project-description">Developed a dynamic corporate platform that effectively communicates the company's industry leadership through strategic information architecture, premium visual design, and optimization for stakeholder engagement.</p>
+              <a href="https://giantpetroleumgroup.co.za/" target="_blank" class="project-link">
+                View Project
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+    
+          <!-- Hukoshwa Contracting -->
+          <div class="project-card">
+            <div class="project-img-container">
+              <img src="/assets/images/websites/Hukoshwa.png" alt="Hukoshwa Contracting" class="project-img">
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">Hukoshwa Contracting</h4>
+              <p class="project-description">Engineered a professional construction industry website that showcases project portfolios, technical expertise, and company capabilities through strategic content organization and industry-specific design elements.</p>
+              <a href="https://www.hukoshwa.com/" target="_blank" class="project-link">
+                View Project
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Brand Design Section -->
+      <div class="category-section" id="brandDesignSection">
+        <h3 class="category-title">Brand Design Projects</h3>
+        <div class="projects-grid">
+    
+          <!-- Cruise Job Assit -->
+          <div class="project-card">
+            <div class="project-img-container">
+              <img src="/assets/images/branding/Cruise Job.png" loading="lazy" alt="Cruise Job Assist" class="project-img">
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">Cruise Job Assist</h4>
+              <p class="project-description">Developed a distinctive brand identity system with strategic positioning elements, including a memorable logo, cohesive color palette, and comprehensive guidelines that effectively differentiate the brand in its competitive market.</p>
+              <a href="https://www.behance.net/claudiusmainja" target="_blank" class="project-link">
+                View Project
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+    
+          <!-- frostIce Reregirretor-->
+          <div class="project-card">
+            <div class="project-img-container">
+              <img src="/assets/images/branding/Frostice.png" loading="lazy" alt="FrostIce" class="project-img">
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">Frost Ice</h4>
+              <p class="project-description">Executed a comprehensive brand strategy with versatile design assets that established market positioning and strengthened digital marketing effectiveness through consistent visual communication and targeted brand messaging.</p>
+              <a href="https://www.behance.net/claudiusmainja" target="_blank" class="project-link">
+                View Project
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+    
+          <!-- NELC -->
+          <div class="project-card">
+            <div class="project-img-container">
+              <img src="/assets/images/branding/NELC.png" loading="lazy" alt="Nature Extant" class="project-img">
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">Nature Extant</h4>
+              <p class="project-description">Created an adaptable brand identity system for an educational institution that projects professionalism across all corporate communications while maintaining consistent visual integrity across diverse print and digital applications.</p>
+              <a href="https://www.behance.net/claudiusmainja" target="_blank" class="project-link">
+                View Project
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+    
+          <div class="project-card">
+            <div class="project-img-container">
+              <img src="/assets/images/branding/Evolve Roofing.png" loading="lazy" alt="Evolve Roofing" class="project-img">
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">Evolve Roofing</h4>
+              <p class="project-description">Executed a strategic brand refresh that enhanced market perception through modernized visual elements, improved brand hierarchy, and strengthened messaging consistency that resulted in measurable increases in brand recognition and customer trust.</p>
+              <a href="https://www.behance.net/claudiusmainja" target="_blank" class="project-link">
+                View Project
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+    
+          <div class="project-card">
+            <div class="project-img-container">
+              <img src="/assets/images/branding/LexChem.png" loading="lazy" alt="LexChem Pharmaceutical" class="project-img">
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">LexChem Pharmaceutical</h4>
+              <p class="project-description">Developed a sophisticated pharmaceutical brand strategy with comprehensive design assets that effectively communicate trust, scientific precision, and healthcare excellence across all digital marketing channels and customer touchpoints.</p>
+              <a href="https://www.behance.net/claudiusmainja" target="_blank" class="project-link">
+                View Project
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+    
+          <div class="project-card">
+            <div class="project-img-container">
+              <img src="/assets/images/branding/Mujegra.png" loading="lazy" alt="Mujegra Enterprises" class="project-img">
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">Mujegra Enterprises</h4>
+              <p class="project-description">Created a distinctive corporate identity with strategic marketing assets that effectively position the enterprise in its competitive landscape while enabling consistent brand communication across all digital platforms and business touchpoints.</p>
+              <a href="https://www.behance.net/claudiusmainja" target="_blank" class="project-link">
+                View Project
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="/javascript/project.js"></script>
+    
+               <!-- Contact Button -->
+               <div id="contact-button" class="fixed bottom-6 right-6 z-50">
+                <!-- Contact Options Modal -->
+                <div id="contact-options" class="hidden">
+                    <!-- Modal Background -->
+                    <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300"></div>
                     
-                    <!-- 7 arts theatre avondale website -->
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
-                        <img src="/assets/images/websites/7 arts Theatre.png" alt="7 Arts Theatre Avondale" class="rounded-lg mb-4 w-full">
-                        <h4 class="text-xl font-semibold text-gray-800">7 Arts Theatre Avondale</h4>
-                        <p class="text-gray-600 mb-4">A responsive and modern website tailored to showcase 7arts Theatre Avondale brand effectively, accross all channels</p>
-                        <a href="https://7artstheatre.com/" target="_blank" class="text-orange-500  hover:underline">View Project</a>
-                    </div>
-    
-                    <!-- Takadah UK -->
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
-                        <img src="/assets/images/websites/takadah.png" alt="Takadah UK" class="rounded-lg mb-4 w-full">
-                        <h4 class="text-xl font-semibold text-gray-800">Takadah</h4>
-                        <p class="text-gray-600 mb-4">An e-commerce site designed to maximize user engagement and sales conversions.</p>
-                        <a href="https://takadah.co.uk/" target="_blank" class="text-orange-500  hover:underline">View Project</a>
-                    </div>
-    
-                    <!-- Classic Reinsurance Brokers-->
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
-                        <img src="/assets/images/websites/classicre.png" alt="Classic Reinsurance Brokers" class="rounded-lg mb-4 w-full">
-                        <h4 class="text-xl font-semibold text-gray-800">Classic Reinsurance Brokers</h4>
-                        <p class="text-gray-600 mb-4">A corporate professional website with a focus on a sleek, professional design and intuitive layout.</p>
-                        <a href="https://classicre.co.zw/" target="_blank" class="text-orange-500  hover:underline">View Project</a>
-                    </div>
-    
-                          <!-- Nature Extant Website -->
-                          <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
-                            <img src="/assets/images/websites/Nature Extant.png" alt="Classic Reinsurance Brokers" class="rounded-lg mb-4 w-full">
-                            <h4 class="text-xl font-semibold text-gray-800">Nature Extant Learning Center</h4>
-                            <p class="text-gray-600 mb-4">An E-learning website for teh students to get access of information of the programs register while have the acessibility functionality to switch between dark and light theme.</p>
-                            <a href="https://natureextant.com/" target="_blank" class="text-orange-500  hover:underline">View Project</a>
+                    <!-- Modal Content -->
+                    <div class="absolute bottom-20 right-0 w-72 bg-white rounded-xl shadow-2xl transform transition-all duration-300">
+                        <!-- Header -->
+                        <div class="p-6 border-b border-gray-100">
+                            <h3 class="text-xl font-semibold text-gray-800">Let's Chat! 👋</h3>
+                            <p class="text-sm text-gray-600 mt-2">Choose how you'd like to connect with me</p>
                         </div>
-    
-                                  <!-- Giant Petroleum Website-->
-                             <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
-                                 <img src="/assets/images/websites/GPG.png" alt="Giant Petroleum Group" class="rounded-lg mb-4 w-full">
-                                 <h4 class="text-xl font-semibold text-gray-800">Giant Petroleum Group</h4>
-                                <p class="text-gray-600 mb-4">A corporate website with a focus on a sleek, professional design and intuitive layout.</p>
-                                <a href="https://giantpetroleumgroup.co.za/" target="_blank" class="text-orange-500  hover:underline">View Project</a>
-                           </div>
-    
-                                      <!-- Hukoshwa Contracting -->
-                                      <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
-                                        <img src="/assets/images/websites/Hukoshwa.png" alt="Hukoshwa Contracting" class="rounded-lg mb-4 w-full">
-                                        <h4 class="text-xl font-semibold text-gray-800">Hukoshwa Contracting</h4>
-                                       <p class="text-gray-600 mb-4">A corporate website for a contruction company, with a focus on a sleek, professional design and intuitive layout.</p>
-                                       <a href="https://www.hukoshwa.com/" target="_blank" class="text-orange-500  hover:underline">View Project</a>
-                                  </div>
-    
+                        
+                        <!-- Contact Options -->
+                        <div class="p-4 space-y-3">
+                            <!-- Email Option -->
+                            <a href="mailto:info@claudius-mainja.com" target="_blank"
+                               class="flex items-center gap-4 p-3 rounded-lg hover:bg-purple-50 transition-all duration-300 group">
+                                <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Email</h4>
+                                    <p class="text-sm text-gray-500">Chat via Email</p>
+                                </div>
+                                <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:translate-x-1 transition-transform duration-300"></i>
+                            </a>
+        
+                            <!-- Phone Option -->
+                            <a href="tel:+27636717594"
+                               class="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-50 transition-all duration-300 group">
+                                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-phone text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Phone Call</h4>
+                                    <p class="text-sm text-gray-500">Direct voice support</p>
+                                </div>
+                                <i class="fas fa-chevron-right ml-auto text-gray-400 group-hover:translate-x-1 transition-transform duration-300"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+        
+                <!-- Main Toggle Button -->
+                <button id="toggle-contact" 
+                        class="group bg-gradient-to-r from-orange-500 to-orange-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-3">
+                    <i class="fas fa-comments text-xl group-hover:rotate-12 transition-transform duration-300"></i>
+                    <span class="text-sm font-medium mr-2">Let's Chat</span>
+                </button>
             </div>
+            
+            <script src="/javascript/chat.js"></script>
     
-            <!-- Brand Design Section -->
-            <div>
-                <h3 class="text-2xl quattrocento-bold text-gray-800 dark:text-white mb-6">Brand Design Projects</h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-    
-                    <!-- Cruise Job Assit -->
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
-                        <img src="/assets/images/branding/Cruise Job.png" loading="lazy" alt="Cruise Job Assist" class="rounded-lg mb-4 w-full">
-                        <h4 class="text-xl font-semibold text-gray-800">Cruise Job Assit</h4>
-                        <p class="text-gray-600 mb-4">Crafted a unique brand identity, including logo, color palette, and guidelines.</p>
-                        <a href="https://www.behance.net/claudiusmainja" target="_blank" class="text-orange-500 hover:underline">View Project</a>
-                    </div>
-    
-                    <!-- frostIce Reregirretor-->
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
-                        <img src="/assets/images/branding/Frostice.png" loading="lazy" alt="FrostIce" class="rounded-lg mb-4 w-full">
-                        <h4 class="text-xl font-semibold text-gray-800">Frost Ice </h4>
-                        <p class="text-gray-600 mb-4">Developed a cohesive brand strategy and design assets for the brand to use on digital marketing.</p>
-                        <a href="https://www.behance.net/claudiusmainja" target="_blank" class="text-orange-500 hover:underline">View Project</a>
-                    </div>
-    
-                    <!-- NELC -->
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
-                        <img src="/assets/images/branding/NELC.png" loading="lazy" alt="Nature Extant" class="rounded-lg mb-4 w-full">
-                        <h4 class="text-xl font-semibold text-gray-800">Nature Extant</h4>
-                        <p class="text-gray-600 mb-4"> Designed a brand identity for a learning insititute, that it can be fitted in all corporate prints</p>
-                        <a href="https://www.behance.net/claudiusmainja" target="_blank" class="text-orange-500 hover:underline">View Project</a>
-                    </div>
-    
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
-                        <img src="/assets/images/branding/Evolve Roofing.png" loading="lazy" alt="Evolve Roofing" class="rounded-lg mb-4 w-full">
-                        <h4 class="text-xl font-semibold text-gray-800">Evolve Roofing</h4>
-                        <p class="text-gray-600 mb-4">Redesigned an existing brand to enhance visual consistency and appeal.</p>
-                        <a href="https://www.behance.net/claudiusmainja" target="_blank" class="text-orange-500 hover:underline">View Project</a>
-                    </div>
-    
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
-                        <img src="/assets/images/branding/LexChem.png" loading="lazy" alt="LexChem Pharmaceutical" class="rounded-lg mb-4 w-full">
-                        <h4 class="text-xl font-semibold text-gray-800">LexChem Pharmaceutical</h4>
-                        <p class="text-gray-600 mb-4">Developed a cohesive brand strategy and design assets for digital marketing.</p>
-                        <a href="https://www.behance.net/claudiusmainja" target="_blank" class="text-orange-500 hover:underline">View Project</a>
-                    </div>
-    
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform duration-300 scale-hover">
-                        <img src="/assets/images/branding/Mujegra.png" loading="lazy" alt="Mujegra Enterprises" class="rounded-lg mb-4 w-full">
-                        <h4 class="text-xl font-semibold text-gray-800">Mujegra Enterprises</h4>
-                        <p class="text-gray-600 mb-4">Developed a cohesive brand strategy and design assets for digital marketing.</p>
-                        <a href="https://www.behance.net/claudiusmainja" target="_blank" class="text-orange-500 hover:underline">View Project</a>
-                    </div>
-    
-                </div>
-            </div>
-        </div>
-    </section>
     </body>
-      <!-- Footer -->
-      <footer class="bg-gray-900 text-white py-12">
-        <!-- Contact Section -->
-        <div class="bg-white py-16">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-3xl font-extrabold text-gray-900">Let's Work Together</h2>
-                <p class="mt-4 text-lg text-gray-500">
-                    Interested in collaborating or learning more about my work?
-                </p>
-                <div class="mt-8">
-                    <a href="tel:+27636717594" target="_blank" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base  rounded-md text-white bg-orange-500 hover:bg-gray-900">
-  Call Me: Let's Talk!
+    
+    <!-- Footer -->
+    <footer class="bg-[#121212] text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <!-- Main Content -->
+            <div class="space-y-8 mb-12">
+                <!-- Logo/Brand Section -->
+                <div class="mb-4">
+                    <!--      <img src="/assets/images/Branding-02.png" alt="logo" class="h-12 mx-auto mb-4">-->
+                    <h3 class="text-3xl font-medium mb-4">Let's Create Something Together</h3>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto"></p>
+                    I am available for new opportunities and exciting projects
+                    </p>
+                </div>
+    
+                <!-- Contact Info -->
+                <div class="mb-4">
+                    <a href="mailto:info@claudius-mainja.com"
+                        class="text-2xl text-orange-400 hover:text-orange-300 transition-colors">
+                        info@claudius-mainja.com
                     </a>
                 </div>
+    
+                <!-- Social Links -->
+                <div class="flex justify-center space-x-8">
+                    <a href="https://github.com/ClaudiusMainja" target="_blank"
+                        class="text-white hover:text-orange-400 transform hover:scale-110 transition-all"
+                        aria-label="GitHub Profile">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/claudius-mainja/" target="_blank"
+                        class="text-gray-400 hover:text-orange-400 transform hover:scale-110 transition-all"
+                        aria-label="LinkedIn Profile">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://dribbble.com/ClaudiusMainja" target="_blank"
+                        class="text-gray-400 hover:text-orange-400 transform hover:scale-110 transition-all"
+                        aria-label="Dribbble Profile">
+                        <i class="fa-brands fa-dribbble"></i>
+                    </a>
+    
+                    <a href="https://www.instagram.com/claudiusmainja/" target="_blank"
+                        class="text-gray-400 hover:text-orange-400 transform hover:scale-110 transition-all"
+                        aria-label="Instagram Profile">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+    
+                    <a href="https://www.behance.net/claudiusmainja" target="_blank"
+                        class="text-gray-400 hover:text-orange-400 transform hover:scale-110 transition-all"
+                        aria-label="Behance Profile">
+                        <i class="fa-brands fa-behance"></i>
+                </div>
+            </div>
+    
+            <!-- Copyright -->
+            <div class="pt-8 border-t border-gray-800">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2024 Claudius Mainja. Crafted with passion in Cape Town.
+                </p>
             </div>
         </div>
-
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <div class="mb-8 md:mb-0">
-                        <h3 class="text-2xl quattrocento-bold  mt-4">Available for Projects</h3>
-                        <a href="maito:info@claudius-mainja.com" target="_blank">
-                        <p  class="text-orange-400 work-sans-bold hover:text-gray-200">info@claudius-mainja.com</p>
-                    </a>
-                    </div>
-                    <div class="flex space-x-6">
-                        <a href="https://github.com/ClaudiusMainja" target="_blank" class="hover:text-orange-400 transition-colors" aria-label="GitHub Profile">
-                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/>
-                            </svg>
-                        </a>
-                        <a href="https://www.linkedin.com/in/claudius-mainja/" target="_blank" class= "text-white hover:text-orange-400 transition-colors" aria-label="LinkedIn Profile">
-                            <svg class="w-6 h-6 text-white dark:text-white dark:hover:text-orange-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                <path fill-rule="evenodd" d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z" clip-rule="evenodd"/>
-                                <path d="M7.2 8.809H4V19.5h3.2V8.809Z"/>
-                              </svg>
-                              
-                        </a>
-                        <a href="https://dribbble.com/ClaudiusMainja" target="_blank" class="hover:text-orange-400 transition-colors" aria-label="Dribble Profile">
-                            <svg class="w-6 h-6 text-white dark:text-white dark:hover:text-orange-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                <path fill-rule="evenodd" d="M12 2a10 10 0 1 0 10 10A10.009 10.009 0 0 0 12 2Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.093 20.093 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM10 3.707a8.82 8.82 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.755 45.755 0 0 0 10 3.707Zm-6.358 6.555a8.57 8.57 0 0 1 4.73-5.981 53.99 53.99 0 0 1 3.168 4.941 32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.641 31.641 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM12 20.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 15.113 13a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z" clip-rule="evenodd"/>
-                              </svg>
-                              
-                        </a>
-    
-                        <a href="https://www.instagram.com/claudiusmainja/" target="_blank" class="hover:text-blue-400 transition-colors" aria-label="Instagram Profile">
-                            <svg class="w-6 h-6 text-white dark:text-white dark:hover:text-orange-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
-                              </svg>
-                              
-                        </a>
-    
-                        <a href="https://www.behance.net/claudiusmainja" target="_blank" class="hover:text-blue-400 transition-colors" aria-label="Behance Profile">
-                            <svg class="w-6 h-6 text-white dark:text-white dark:hover:text-orange-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M13.2131 9.78732c-.6359-.63557-1.4983-.99259-2.3974-.99259-.89911 0-1.76143.35702-2.39741.99259l-3.4253 3.42528C4.35719 13.8485 4 14.7108 4 15.61c0 .8992.35719 1.7616.99299 2.3974.63598.6356 1.4983.9926 2.39742.9926.89912 0 1.76144-.357 2.39742-.9926l.32157-.3043m-.32157-4.4905c.63587.6358 1.49827.993 2.39747.993.8991 0 1.7615-.3572 2.3974-.993l3.4243-3.42528c.6358-.63585.993-1.49822.993-2.39741 0-.89919-.3572-1.76156-.993-2.39741C17.3712 4.357 16.509 4 15.6101 4c-.899 0-1.7612.357-2.397.9925l-1.0278.96062m7.3873 14.04678-1.7862-1.7862m0 0L16 16.4274m1.7864 1.7863 1.7862-1.7863m-1.7862 1.7863L16 20"/>
-                              </svg>
-                              
-                        </a>
-    
-                    </div>
-                </div>
-                <div class="text-center text-gray-400 quattrocento-regular">
-                    <p>&copy; 2024 Claudius Mainja. All rights reserved.</p>
-                </div>
-            </div>
-        </footer>
-
-    
-    <!-- JavaScript for Animations -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('.fade-in, .slide-up');
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-    
-            sections.forEach(section => observer.observe(section));
-        });
-    </script>
-
-     <!-- Scripts -->
-     <script>
-        // Loading Screen
-        window.addEventListener('load', () => {
-            const loader = document.getElementById('loader');
-            loader.style.opacity = '0';
-            loader.style.transition = 'opacity 0.5s ease-out';
-            setTimeout(() => {
-                loader.style.display = 'none';
-            }, 500);
-        });
-
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        menuBtn.addEventListener('click', () => {
-            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-            menuBtn.setAttribute('aria-expanded', !isExpanded);
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Scroll Animation
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const fadeInOnScroll = () => {
-            fadeElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementBottom = element.getBoundingClientRect().bottom;
-                
-                if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
-                    element.classList.add('visible');
-                }
-            });
-        };
-
-        // Initial check for elements in view
-        fadeInOnScroll();
-        
-        // Listen for scroll events
-        window.addEventListener('scroll', fadeInOnScroll);
-
-        // Header Scroll Effect
-        const header = document.getElementById('header');
-        let lastScroll = 0;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll <= 0) {
-                header.classList.remove('shadow-lg');
-                header.style.transform = 'translateY(0)';
-            } else if (currentScroll > lastScroll) {
-                // Scrolling down
-                header.style.transform = 'translateY(-100%)';
-            } else {
-                // Scrolling up
-                header.classList.add('shadow-lg');
-                header.style.transform = 'translateY(0)';
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Form Submission
-        const contactForm = document.getElementById('contactForm');
-        
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(contactForm);
-            const formObject = Object.fromEntries(formData);
-            
-            try {
-                // Replace with your actual form submission endpoint
-                const response = await fetch('/api/contact', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formObject),
-                });
-                
-                if (response.ok) {
-                    alert('Message sent successfully!');
-                    contactForm.reset();
-                } else {
-                    throw new Error('Failed to send message');
-                }
-            } catch (error) {
-                alert('There was an error sending your message. Please try again later.');
-                console.error('Error:', error);
-            }
-        });
-
-        // Active Navigation Link Highlighting
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (window.pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('text-blue-600');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.classList.add('text-blue-600');
-                }
-            });
-        });
-    </script>
-
-    <!-- Deferred Loading for Performance -->
-    <script defer>
-        // Lazy load images
-        document.addEventListener('DOMContentLoaded', () => {
-            const images = document.querySelectorAll('img[data-src]');
-            
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.removeAttribute('data-src');
-                        observer.unobserve(img);
-                    }
-                });
-            });
-
-            images.forEach(img => imageObserver.observe(img));
-        });
-    </script>
-
+    </footer>
+    <script src="/main.js"></script>
 </html>
